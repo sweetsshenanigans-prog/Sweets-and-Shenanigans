@@ -1,1 +1,1 @@
-# Sweets-and-Shenanigans
+# Sweets-&-Shenanigans
