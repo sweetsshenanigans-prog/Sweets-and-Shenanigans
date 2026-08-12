@@ -150,7 +150,7 @@
         <option value="10">12 oz - $10</option>
       </select>
 
-      <button onclick="addPudding('banana')">
+      <button type="button" onclick="addPudding('banana')">
         Add to Order
       </button>
     </div>
@@ -165,7 +165,7 @@
         <option value="10">12 oz - $10</option>
       </select>
 
-      <button onclick="addPudding('peach')">
+      <button type="button" onclick="addPudding('peach')">
         Add to Order
       </button>
     </div>
@@ -180,7 +180,7 @@
         <option value="10">12 oz - $10</option>
       </select>
 
-      <button onclick="addPudding('sunshine')">
+      <button type="button" onclick="addPudding('sunshine')">
         Add to Order
       </button>
     </div>
@@ -195,7 +195,7 @@
         <option value="10">12 oz - $10</option>
       </select>
 
-      <button onclick="addPudding('strawberry')">
+      <button type="button" onclick="addPudding('strawberry')">
         Add to Order
       </button>
     </div>
@@ -210,7 +210,7 @@
         <option value="10">12 oz - $10</option>
       </select>
 
-      <button onclick="addPudding('bananaStrawberry')">
+      <button type="button" onclick="addPudding('bananaStrawberry')">
         Add to Order
       </button>
     </div>
@@ -225,7 +225,7 @@
         <option value="10">12 oz - $10</option>
       </select>
 
-      <button onclick="addPudding('biscoff')">
+      <button type="button" onclick="addPudding('biscoff')">
         Add to Order
       </button>
     </div>
@@ -234,42 +234,96 @@
 
   <!-- CHEESECAKES -->
   <div class="section">
-
     <h2>🍰 Cheesecake Slices — $7</h2>
 
     <div class="item">
       <h3>Caramel Apple Pie</h3>
-      <button onclick="addCheesecake('Caramel Apple Pie')">
+      <button type="button" onclick="addCheesecake('Caramel Apple Pie')">
         Add Slice
       </button>
     </div>
 
     <div class="item">
       <h3>Apple Pie</h3>
-      <button onclick="addCheesecake('Apple Pie')">
+      <button type="button" onclick="addCheesecake('Apple Pie')">
         Add Slice
       </button>
     </div>
 
     <div class="item">
       <h3>Jaylen's Peanut Butter Bliss</h3>
-      <button onclick="addCheesecake('Jaylen\'s Peanut Butter Bliss')">
+      <button type="button" onclick="addCheesecake('Jaylen\'s Peanut Butter Bliss')">
         Add Slice
       </button>
     </div>
 
     <div class="item">
       <h3>Oreo Cheesecake</h3>
-      <button onclick="addCheesecake('Oreo Cheesecake')">
+      <button type="button" onclick="addCheesecake('Oreo Cheesecake')">
         Add Slice
       </button>
     </div>
+  </div>
 
+  <!-- SHENANIGAN FLIGHT -->
+  <div class="section">
+    <h2>✨ Shenanigan Flight — $12</h2>
+
+    <p>
+      Choose any 4 flavors — four 3 oz sampler cups.
+    </p>
+
+    <label>Flavor 1</label>
+    <select id="flightFlavor1">
+      <option value="">Choose a flavor</option>
+      <option value="Regular Banana Pudding">Regular Banana Pudding</option>
+      <option value="Peach Cobbler Passion">Peach Cobbler Passion</option>
+      <option value="Sunshine Crunch">Sunshine Crunch</option>
+      <option value="Strawberry Crunch Dream">Strawberry Crunch Dream</option>
+      <option value="Banana Strawberry Crunch Dream">Banana Strawberry Crunch Dream</option>
+      <option value="Biscoff Bliss">Biscoff Bliss</option>
+    </select>
+
+    <label>Flavor 2</label>
+    <select id="flightFlavor2">
+      <option value="">Choose a flavor</option>
+      <option value="Regular Banana Pudding">Regular Banana Pudding</option>
+      <option value="Peach Cobbler Passion">Peach Cobbler Passion</option>
+      <option value="Sunshine Crunch">Sunshine Crunch</option>
+      <option value="Strawberry Crunch Dream">Strawberry Crunch Dream</option>
+      <option value="Banana Strawberry Crunch Dream">Banana Strawberry Crunch Dream</option>
+      <option value="Biscoff Bliss">Biscoff Bliss</option>
+    </select>
+
+    <label>Flavor 3</label>
+    <select id="flightFlavor3">
+      <option value="">Choose a flavor</option>
+      <option value="Regular Banana Pudding">Regular Banana Pudding</option>
+      <option value="Peach Cobbler Passion">Peach Cobbler Passion</option>
+      <option value="Sunshine Crunch">Sunshine Crunch</option>
+      <option value="Strawberry Crunch Dream">Strawberry Crunch Dream</option>
+      <option value="Banana Strawberry Crunch Dream">Banana Strawberry Crunch Dream</option>
+      <option value="Biscoff Bliss">Biscoff Bliss</option>
+    </select>
+
+    <label>Flavor 4</label>
+    <select id="flightFlavor4">
+      <option value="">Choose a flavor</option>
+      <option value="Regular Banana Pudding">Regular Banana Pudding</option>
+      <option value="Peach Cobbler Passion">Peach Cobbler Passion</option>
+      <option value="Sunshine Crunch">Sunshine Crunch</option>
+      <option value="Strawberry Crunch Dream">Strawberry Crunch Dream</option>
+      <option value="Banana Strawberry Crunch Dream">Banana Strawberry Crunch Dream</option>
+      <option value="Biscoff Bliss">Biscoff Bliss</option>
+    </select>
+
+    <button type="button" onclick="addFlight()">
+      Add Shenanigan Flight — $12
+    </button>
   </div>
 
   <!-- CART -->
   <div class="section">
-
     <h2>🛒 Your Order</h2>
 
     <div id="cart">
@@ -281,12 +335,10 @@
     <div class="total">
       Subtotal: $<span id="subtotal">0.00</span>
     </div>
-
   </div>
 
   <!-- CUSTOMER INFORMATION -->
   <div class="section">
-
     <h2>📋 Customer Information</h2>
 
     <input
@@ -334,7 +386,6 @@
     </label>
 
     <div id="deliveryBox" class="hidden">
-
       <input
         type="text"
         id="address"
@@ -345,7 +396,6 @@
         Delivery pricing will be calculated automatically
         in the next version.
       </p>
-
     </div>
 
     <h3>Payment Method</h3>
@@ -364,6 +414,7 @@
     ></textarea>
 
     <button
+      type="button"
       class="submit"
       onclick="submitOrder()"
     >
@@ -371,7 +422,6 @@
     </button>
 
     <p id="confirmation"></p>
-
   </div>
 
 </div>
@@ -387,74 +437,99 @@ function addPudding(type) {
   let price;
 
   if (type === "banana") {
-
     name = document.getElementById("bananaOption").value;
 
     let select = document.getElementById("bananaSize");
 
     size = select.options[select.selectedIndex].text;
     price = Number(select.value);
-
   }
 
   if (type === "peach") {
-
     name = "Peach Cobbler Passion";
 
     let select = document.getElementById("peachSize");
 
     size = select.options[select.selectedIndex].text;
     price = Number(select.value);
-
   }
 
   if (type === "sunshine") {
-
     name = "Sunshine Crunch";
 
     let select = document.getElementById("sunshineSize");
 
     size = select.options[select.selectedIndex].text;
     price = Number(select.value);
-
   }
 
   if (type === "strawberry") {
-
     name = "Strawberry Crunch Dream";
 
     let select = document.getElementById("strawberrySize");
 
     size = select.options[select.selectedIndex].text;
     price = Number(select.value);
-
   }
 
   if (type === "bananaStrawberry") {
-
     name = "Banana Strawberry Crunch Dream";
 
     let select = document.getElementById("bananaStrawberrySize");
 
     size = select.options[select.selectedIndex].text;
     price = Number(select.value);
-
   }
 
   if (type === "biscoff") {
-
     name = "Biscoff Bliss";
 
     let select = document.getElementById("biscoffSize");
 
     size = select.options[select.selectedIndex].text;
     price = Number(select.value);
-
   }
 
   cart.push({
     name: name + " - " + size,
     price: price
+  });
+
+  updateCart();
+}
+
+
+function addFlight() {
+
+  const flavor1 =
+    document.getElementById("flightFlavor1").value;
+
+  const flavor2 =
+    document.getElementById("flightFlavor2").value;
+
+  const flavor3 =
+    document.getElementById("flightFlavor3").value;
+
+  const flavor4 =
+    document.getElementById("flightFlavor4").value;
+
+  if (!flavor1 || !flavor2 || !flavor3 || !flavor4) {
+    alert(
+      "Please choose all 4 flavors for your Shenanigan Flight."
+    );
+    return;
+  }
+
+  const flightName =
+    "Shenanigan Flight: " +
+    flavor1 + ", " +
+    flavor2 + ", " +
+    flavor3 + ", " +
+    flavor4;
+
+  cart.push({
+    name: flightName,
+    price: 12
   });
 
   updateCart();
@@ -482,7 +557,8 @@ function removeItem(index) {
 
 function updateCart() {
 
-  let cartBox = document.getElementById("cart");
+  let cartBox =
+    document.getElementById("cart");
 
   if (cart.length === 0) {
 
@@ -503,7 +579,8 @@ function updateCart() {
 
     total += item.price;
 
-    let row = document.createElement("div");
+    let row =
+      document.createElement("div");
 
     row.className = "cart-item";
 
@@ -511,18 +588,14 @@ function updateCart() {
       "<span>" +
       item.name +
       "</span>" +
-
       "<span>$" +
       item.price.toFixed(2) +
-
-      ' <button onclick="removeItem(' +
+      ' <button type="button" onclick="removeItem(' +
       index +
       ')">Remove</button>' +
-
       "</span>";
 
     cartBox.appendChild(row);
-
   });
 
   document.getElementById("subtotal").innerText =
@@ -536,18 +609,15 @@ function showDelivery(show) {
     .getElementById("deliveryBox")
     .classList
     .toggle("hidden", !show);
-
 }
 
 
 function submitOrder() {
 
   if (cart.length === 0) {
-
     alert(
       "Please add something to your order first."
     );
-
     return;
   }
 
@@ -575,20 +645,16 @@ function submitOrder() {
     document.getElementById("notes").value;
 
   if (!name || !phone) {
-
     alert(
       "Please enter your name and phone number."
     );
-
     return;
   }
 
   if (delivery === "delivery" && !address) {
-
     alert(
       "Please enter your delivery address."
     );
-
     return;
   }
 
@@ -605,33 +671,19 @@ function submitOrder() {
     }).join("\n");
 
   let orderData = {
-
     customerName: name,
-
     phone: phone,
-
     orderDate: orderDate,
-
     items: items,
-
     subtotal: subtotal.toFixed(2),
-
     fulfillment: delivery,
-
     address: address,
-
     distance: "",
-
     deliveryFee: "",
-
     total: subtotal.toFixed(2),
-
     paymentMethod: paymentMethod,
-
     notes: notes
-
   };
-
 
   fetch(
     "https://script.google.com/macros/s/AKfycbxsnRE1_gZNCLhzTImSm5lnxse9ivMPQ0qIgWaAoxf0k4N135QXh844-I4wLKU7qgEH/exec",
@@ -645,14 +697,12 @@ function submitOrder() {
     }
   );
 
-
   document.getElementById("confirmation").innerText =
     "Thank you! Your order has been submitted.";
 
   cart = [];
 
   updateCart();
-
 }
 
 </script>
