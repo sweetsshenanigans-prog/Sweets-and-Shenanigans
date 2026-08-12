@@ -90,6 +90,7 @@
       justify-content: space-between;
       border-bottom: 1px solid #eee;
       padding: 10px 0;
+      gap: 10px;
     }
 
     .total {
@@ -126,6 +127,7 @@
 
 <div class="container">
 
+  <!-- PUDDINGS -->
   <div class="section">
     <h2>🍮 Pudding Cups</h2>
 
@@ -148,7 +150,9 @@
         <option value="10">12 oz - $10</option>
       </select>
 
-      <button onclick="addPudding('banana')">Add to Order</button>
+      <button onclick="addPudding('banana')">
+        Add to Order
+      </button>
     </div>
 
     <div class="item">
@@ -161,7 +165,9 @@
         <option value="10">12 oz - $10</option>
       </select>
 
-      <button onclick="addPudding('peach')">Add to Order</button>
+      <button onclick="addPudding('peach')">
+        Add to Order
+      </button>
     </div>
 
     <div class="item">
@@ -174,7 +180,9 @@
         <option value="10">12 oz - $10</option>
       </select>
 
-      <button onclick="addPudding('sunshine')">Add to Order</button>
+      <button onclick="addPudding('sunshine')">
+        Add to Order
+      </button>
     </div>
 
     <div class="item">
@@ -187,7 +195,9 @@
         <option value="10">12 oz - $10</option>
       </select>
 
-      <button onclick="addPudding('strawberry')">Add to Order</button>
+      <button onclick="addPudding('strawberry')">
+        Add to Order
+      </button>
     </div>
 
     <div class="item">
@@ -200,7 +210,9 @@
         <option value="10">12 oz - $10</option>
       </select>
 
-      <button onclick="addPudding('bananaStrawberry')">Add to Order</button>
+      <button onclick="addPudding('bananaStrawberry')">
+        Add to Order
+      </button>
     </div>
 
     <div class="item">
@@ -213,21 +225,30 @@
         <option value="10">12 oz - $10</option>
       </select>
 
-      <button onclick="addPudding('biscoff')">Add to Order</button>
+      <button onclick="addPudding('biscoff')">
+        Add to Order
+      </button>
     </div>
+
   </div>
 
+  <!-- CHEESECAKES -->
   <div class="section">
+
     <h2>🍰 Cheesecake Slices — $7</h2>
 
     <div class="item">
       <h3>Caramel Apple Pie</h3>
-      <button onclick="addCheesecake('Caramel Apple Pie')">Add Slice</button>
+      <button onclick="addCheesecake('Caramel Apple Pie')">
+        Add Slice
+      </button>
     </div>
 
     <div class="item">
       <h3>Apple Pie</h3>
-      <button onclick="addCheesecake('Apple Pie')">Add Slice</button>
+      <button onclick="addCheesecake('Apple Pie')">
+        Add Slice
+      </button>
     </div>
 
     <div class="item">
@@ -239,31 +260,53 @@
 
     <div class="item">
       <h3>Oreo Cheesecake</h3>
-      <button onclick="addCheesecake('Oreo Cheesecake')">Add Slice</button>
+      <button onclick="addCheesecake('Oreo Cheesecake')">
+        Add Slice
+      </button>
     </div>
+
   </div>
 
+  <!-- CART -->
   <div class="section">
+
     <h2>🛒 Your Order</h2>
 
     <div id="cart">
-      <p class="small-text">Your order is currently empty.</p>
+      <p class="small-text">
+        Your order is currently empty.
+      </p>
     </div>
 
     <div class="total">
       Subtotal: $<span id="subtotal">0.00</span>
     </div>
+
   </div>
 
+  <!-- CUSTOMER INFORMATION -->
   <div class="section">
+
     <h2>📋 Customer Information</h2>
 
-    <input type="text" id="customerName" placeholder="Full Name">
+    <input
+      type="text"
+      id="customerName"
+      placeholder="Full Name"
+    >
 
-    <input type="tel" id="phone" placeholder="Phone Number">
+    <input
+      type="tel"
+      id="phone"
+      placeholder="Phone Number"
+    >
 
     <label>Order Date</label>
-    <input type="date" id="orderDate">
+
+    <input
+      type="date"
+      id="orderDate"
+    >
 
     <h3>Pickup or Delivery?</h3>
 
@@ -320,11 +363,15 @@
       placeholder="Order notes (optional)"
     ></textarea>
 
-    <button class="submit" onclick="submitOrder()">
+    <button
+      class="submit"
+      onclick="submitOrder()"
+    >
       Submit Order
     </button>
 
     <p id="confirmation"></p>
+
   </div>
 
 </div>
@@ -340,57 +387,69 @@ function addPudding(type) {
   let price;
 
   if (type === "banana") {
+
     name = document.getElementById("bananaOption").value;
 
     let select = document.getElementById("bananaSize");
 
     size = select.options[select.selectedIndex].text;
     price = Number(select.value);
+
   }
 
   if (type === "peach") {
+
     name = "Peach Cobbler Passion";
 
     let select = document.getElementById("peachSize");
 
     size = select.options[select.selectedIndex].text;
     price = Number(select.value);
+
   }
 
   if (type === "sunshine") {
+
     name = "Sunshine Crunch";
 
     let select = document.getElementById("sunshineSize");
 
     size = select.options[select.selectedIndex].text;
     price = Number(select.value);
+
   }
 
   if (type === "strawberry") {
+
     name = "Strawberry Crunch Dream";
 
     let select = document.getElementById("strawberrySize");
 
     size = select.options[select.selectedIndex].text;
     price = Number(select.value);
+
   }
 
   if (type === "bananaStrawberry") {
+
     name = "Banana Strawberry Crunch Dream";
 
     let select = document.getElementById("bananaStrawberrySize");
 
     size = select.options[select.selectedIndex].text;
     price = Number(select.value);
+
   }
 
   if (type === "biscoff") {
+
     name = "Biscoff Bliss";
 
     let select = document.getElementById("biscoffSize");
 
     size = select.options[select.selectedIndex].text;
     price = Number(select.value);
+
   }
 
   cart.push({
@@ -400,6 +459,7 @@ function addPudding(type) {
 
   updateCart();
 }
+
 
 function addCheesecake(name) {
 
@@ -411,12 +471,14 @@ function addCheesecake(name) {
   updateCart();
 }
 
+
 function removeItem(index) {
 
   cart.splice(index, 1);
 
   updateCart();
 }
+
 
 function updateCart() {
 
@@ -427,7 +489,8 @@ function updateCart() {
     cartBox.innerHTML =
       '<p class="small-text">Your order is currently empty.</p>';
 
-    document.getElementById("subtotal").innerText = "0.00";
+    document.getElementById("subtotal").innerText =
+      "0.00";
 
     return;
   }
@@ -448,19 +511,24 @@ function updateCart() {
       "<span>" +
       item.name +
       "</span>" +
+
       "<span>$" +
       item.price.toFixed(2) +
+
       ' <button onclick="removeItem(' +
       index +
       ')">Remove</button>' +
+
       "</span>";
 
     cartBox.appendChild(row);
+
   });
 
   document.getElementById("subtotal").innerText =
     total.toFixed(2);
 }
+
 
 function showDelivery(show) {
 
@@ -468,13 +536,17 @@ function showDelivery(show) {
     .getElementById("deliveryBox")
     .classList
     .toggle("hidden", !show);
+
 }
+
 
 function submitOrder() {
 
   if (cart.length === 0) {
 
-    alert("Please add something to your order first.");
+    alert(
+      "Please add something to your order first."
+    );
 
     return;
   }
@@ -504,14 +576,18 @@ function submitOrder() {
 
   if (!name || !phone) {
 
-    alert("Please enter your name and phone number.");
+    alert(
+      "Please enter your name and phone number."
+    );
 
     return;
   }
 
   if (delivery === "delivery" && !address) {
 
-    alert("Please enter your delivery address.");
+    alert(
+      "Please enter your delivery address."
+    );
 
     return;
   }
@@ -553,10 +629,12 @@ function submitOrder() {
     paymentMethod: paymentMethod,
 
     notes: notes
+
   };
 
+
   fetch(
-    "https://script.google.com/macros/s/AKfycbyRmePAwBo3kTeuoQ5rFMaTzC5h-bxPZKyqo0WNxRRwodKkgewW--6qsdQYbamjngfW/exec",
+    "https://script.google.com/macros/s/AKfycbzQ-ew_2ffD7PRR5QHA2jH5WYKudTduhmAtyCJWnE0qLG9qSDw9kvqOmg4f_Nm6UyaO/exec",
     {
       method: "POST",
       mode: "no-cors",
@@ -567,12 +645,14 @@ function submitOrder() {
     }
   );
 
+
   document.getElementById("confirmation").innerText =
     "Thank you! Your order has been submitted.";
 
   cart = [];
 
   updateCart();
+
 }
 
 </script>
