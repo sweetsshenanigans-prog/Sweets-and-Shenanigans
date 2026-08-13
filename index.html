@@ -332,11 +332,12 @@
       </p>
     </div>
 
-    <div class="total">
-      Subtotal: $<span id="subtotal">0.00</span>
-    </div>
-  </div>
-
+    
+  <div class="total">
+  <div>Subtotal: $<span id="subtotal">0.00</span></div>
+  <div>Delivery Fee: $<span id="displayDeliveryFee">0.00</span></div>
+  <div><strong>Total: $<span id="displayTotal">0.00</span></strong></div>
+</div>
   <!-- CUSTOMER INFORMATION -->
   <div class="section">
     <h2>📋 Customer Information</h2>
@@ -570,32 +571,26 @@ function removeItem(index) {
 
 
 function updateCart() {
-
-  let cartBox =
-    document.getElementById("cart");
+  const cartBox = document.getElementById("cart");
 
   if (cart.length === 0) {
-
     cartBox.innerHTML =
       '<p class="small-text">Your order is currently empty.</p>';
 
-    document.getElementById("subtotal").innerText =
-      "0.00";
-
+    document.getElementById("subtotal").innerText = "0.00";
+    document.getElementById("displayDeliveryFee").innerText = "0.00";
+    document.getElementById("displayTotal").innerText = "0.00";
     return;
   }
 
   cartBox.innerHTML = "";
 
-  let total = 0;
+  let subtotal = 0;
 
   cart.forEach(function(item, index) {
+    subtotal += item.price;
 
-    total += item.price;
-
-    let row =
-      document.createElement("div");
-
+    let row = document.createElement("div");
     row.className = "cart-item";
 
     row.innerHTML =
@@ -606,13 +601,33 @@ function updateCart() {
       item.price.toFixed(2) +
       ' <button type="button" onclick="removeItem(' +
       index +
-      ')">Remove</button>' +
-      "</span>";
+      ')">Remove</button></span>';
 
     cartBox.appendChild(row);
   });
 
+  const delivery =
+    document.querySelector('input[name="delivery"]:checked')?.value;
+
+  let deliveryFee = 0;
+
+  if (delivery === "delivery") {
+    const zip = document.getElementById("zip")?.value.trim();
+
+    if (zip) {
+      deliveryFee = getDeliveryInfo(zip).fee;
+    }
+  }
+
+  const total = subtotal + deliveryFee;
+
   document.getElementById("subtotal").innerText =
+    subtotal.toFixed(2);
+
+  document.getElementById("displayDeliveryFee").innerText =
+    deliveryFee.toFixed(2);
+
+  document.getElementById("displayTotal").innerText =
     total.toFixed(2);
 }
 
