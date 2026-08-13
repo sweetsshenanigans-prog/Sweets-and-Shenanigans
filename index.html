@@ -359,45 +359,59 @@
       type="date"
       id="orderDate"
     >
+<h3>Pickup or Delivery?</h3>
 
-    <h3>Pickup or Delivery?</h3>
+<label>
+  <input
+    type="radio"
+    name="delivery"
+    value="pickup"
+    checked
+    onclick="showDelivery(false)"
+  >
+  Pickup
+</label>
 
-    <label>
-      <input
-        type="radio"
-        name="delivery"
-        value="pickup"
-        checked
-        onclick="showDelivery(false)"
-      >
-      Pickup
-    </label>
+<br><br>
 
-    <br><br>
+<label>
+  <input
+    type="radio"
+    name="delivery"
+    value="delivery"
+    onclick="showDelivery(true)"
+  >
+  Delivery
+</label>
 
-    <label>
-      <input
-        type="radio"
-        name="delivery"
-        value="delivery"
-        onclick="showDelivery(true)"
-      >
-      Delivery
-    </label>
+<div id="deliveryBox" class="hidden">
 
-    <div id="deliveryBox" class="hidden">
-      <input
-        type="text"
-        id="address"
-        placeholder="Delivery Address"
-      >
+  <input
+    type="text"
+    id="address"
+    placeholder="Delivery Address"
+  >
 
-      <p class="small-text">
-        Delivery pricing will be calculated automatically
-        in the next version.
-      </p>
-    </div>
+  <br><br>
 
+  <input
+    type="text"
+    id="zip"
+    placeholder="Delivery ZIP Code"
+    maxlength="5"
+    inputmode="numeric"
+  >
+
+  <p class="small-text">
+    Delivery fee will be based on your ZIP code.
+  </p>
+
+  <p id="deliveryFeeDisplay" class="small-text">
+    Delivery Fee: $0
+  </p>
+
+</div>
+    
     <h3>Payment Method</h3>
 
     <select id="paymentMethod">
@@ -603,21 +617,63 @@ function updateCart() {
 }
 
 
-function showDelivery(show) {
+function getDeliveryInfo(zip) {
+  const zone1 = ["14215", "14214", "14208", "14211", "14216"];
+  const zone2 = ["14209", "14212", "14213", "14210", "14222"];
+  const zone3 = ["14201", "14202", "14203", "14204", "14206", "14220", "14223"];
+  const zone4 = ["14207", "14217", "14218", "14219", "14221", "14224", "14225", "14226", "14227", "14228"];
 
+  if (zone1.includes(zip)) {
+    return { zone: "Zone 1", fee: 3 };
+  }
+
+  if (zone2.includes(zip)) {
+    return { zone: "Zone 2", fee: 5 };
+  }
+
+  if (zone3.includes(zip)) {
+    return { zone: "Zone 3", fee: 8 };
+  }
+
+  if (zone4.includes(zip)) {
+    return { zone: "Zone 4", fee: 10 };
+  }
+
+  return { zone: "", fee: 0 };
+}
+
+function showDelivery(show) {
   document
     .getElementById("deliveryBox")
     .classList
     .toggle("hidden", !show);
+
+  const zipInput = document.getElementById("zip");
+
+  if (show && zipInput) {
+    zipInput.oninput = function () {
+      const zip = zipInput.value.trim();
+      const info = getDeliveryInfo(zip);
+      const feeDisplay = document.getElementById("deliveryFeeDisplay");
+
+      if (zip.length === 5 && info.fee > 0) {
+        feeDisplay.innerText =
+          "Delivery Fee: $" + info.fee.toFixed(2) + " (" + info.zone + ")";
+      } else if (zip.length === 5) {
+        feeDisplay.innerText =
+          "Delivery area not available. Please choose pickup.";
+      } else {
+        feeDisplay.innerText = "Delivery Fee: $0";
+      }
+    };
+  }
 }
 
 
 function submitOrder() {
 
   if (cart.length === 0) {
-    alert(
-      "Please add something to your order first."
-    );
+    alert("Please add something to your order first.");
     return;
   }
 
@@ -638,6 +694,9 @@ function submitOrder() {
   let address =
     document.getElementById("address").value;
 
+  let zip =
+    document.getElementById("zip").value.trim();
+
   let paymentMethod =
     document.getElementById("paymentMethod").value;
 
@@ -645,23 +704,91 @@ function submitOrder() {
     document.getElementById("notes").value;
 
   if (!name || !phone) {
-    alert(
-      "Please enter your name and phone number."
-    );
+    alert("Please enter your name and phone number.");
     return;
   }
 
-  if (delivery === "delivery" && !address) {
-    alert(
-      "Please enter your delivery address."
-    );
-    return;
+  let deliveryFee = 0;
+  let deliveryZone = "";
+
+  if (delivery === "delivery") {
+
+    if (!address) {
+      alert("Please enter your delivery address.");
+      return;
+    }
+
+    if (!/^\d{5}$/.test(zip)) {
+      alert("Please enter a valid 5-digit delivery ZIP code.");
+      return;
+    }
+
+    const zone1 = [
+      "14215",
+      "14214",
+      "14208",
+      "14211",
+      "14216"
+    ];
+
+    const zone2 = [
+      "14209",
+      "14212",
+      "14213",
+      "14210",
+      "14222"
+    ];
+
+    const zone3 = [
+      "14201",
+      "14202",
+      "14203",
+      "14204",
+      "14206",
+      "14220",
+      "14223"
+    ];
+
+    const zone4 = [
+      "14207",
+      "14217",
+      "14218",
+      "14219",
+      "14221",
+      "14224",
+      "14225",
+      "14226",
+      "14227",
+      "14228"
+    ];
+
+    if (zone1.includes(zip)) {
+      deliveryZone = "Zone 1";
+      deliveryFee = 3;
+    } else if (zone2.includes(zip)) {
+      deliveryZone = "Zone 2";
+      deliveryFee = 5;
+    } else if (zone3.includes(zip)) {
+      deliveryZone = "Zone 3";
+      deliveryFee = 8;
+    } else if (zone4.includes(zip)) {
+      deliveryZone = "Zone 4";
+      deliveryFee = 10;
+    } else {
+      alert(
+        "Sorry, that ZIP code is outside our current delivery area. Please choose pickup."
+      );
+      return;
+    }
   }
 
   let subtotal =
     cart.reduce(function(total, item) {
       return total + item.price;
     }, 0);
+
+  let total =
+    subtotal + deliveryFee;
 
   let items =
     cart.map(function(item) {
@@ -678,9 +805,9 @@ function submitOrder() {
     subtotal: subtotal.toFixed(2),
     fulfillment: delivery,
     address: address,
-    distance: "",
-    deliveryFee: "",
-    total: subtotal.toFixed(2),
+    distance: deliveryZone,
+    deliveryFee: deliveryFee.toFixed(2),
+    total: total.toFixed(2),
     paymentMethod: paymentMethod,
     notes: notes
   };
