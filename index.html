@@ -457,36 +457,47 @@
 <script>
 
 let cart = [];
-const DROP_DAY = false;
+const DROP_DAY = true;
 
 const DROP_DAY_ITEMS = [
   "Regular Banana Pudding",
-  "Peach Cobbler Passion",
-  "Sunshine Crunch",
   "Strawberry Crunch Dream",
-  "Banana Strawberry Crunch Dream",
-  "Biscoff Bliss"
+  "Biscoff Bliss",
+  "Oreos and Cream Pudding"
 ];
 
 function applyDropDay() {
-  const puddingSection = Array.from(document.querySelectorAll(".section"))
-    .find(section =>
-      section.querySelector("h2")?.textContent.includes("Pudding Cups")
-    );
+  const sections = Array.from(document.querySelectorAll(".section"));
 
-  if (!puddingSection) return;
+  const puddingSection = sections.find(section =>
+    section.querySelector("h2")?.textContent.includes("Pudding Cups")
+  );
 
-  const items = puddingSection.querySelectorAll(".item");
+  const cheesecakeSection = sections.find(section =>
+    section.querySelector("h2")?.textContent.includes("Cheesecake Slices")
+  );
 
-  items.forEach(item => {
-    const title = item.querySelector("h3")?.textContent.trim();
+  if (!DROP_DAY) {
+    sections.forEach(section => {
+      section.querySelectorAll(".item").forEach(item => {
+        item.style.display = "";
+      });
+    });
+    return;
+  }
 
-    if (!DROP_DAY) {
-      item.style.display = "";
-    } else {
+  if (puddingSection) {
+    puddingSection.querySelectorAll(".item").forEach(item => {
+      const title = item.querySelector("h3")?.textContent.trim();
       item.style.display = DROP_DAY_ITEMS.includes(title) ? "" : "none";
-    }
-  });
+    });
+  }
+
+  if (cheesecakeSection) {
+    cheesecakeSection.querySelectorAll(".item").forEach(item => {
+      item.style.display = "";
+    });
+  }
 }
 
 applyDropDay();
