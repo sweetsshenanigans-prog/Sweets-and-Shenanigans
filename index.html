@@ -219,17 +219,30 @@
       <h3>Biscoff Bliss</h3>
 
       <select id="biscoffSize">
-        <option value="3">3 oz - $3</option>
+        
         <option value="4">5 oz - $4</option>
         <option value="7">8 oz - $7</option>
-        <option value="10">12 oz - $10</option>
+        
       </select>
 
       <button type="button" onclick="addPudding('biscoff')">
         Add to Order
       </button>
     </div>
+<div class="item">
+  <h3>Oreos and Cream Pudding</h3>
 
+  <select id="oreoSize">
+    <option value="3">3 oz - $3</option>
+    <option value="4">5 oz - $4</option>
+    <option value="7">8 oz - $7</option>
+    <option value="10">12 oz - $10</option>
+  </select>
+
+  <button type="button" onclick="addPudding('oreo')">
+    Add to Order
+  </button>
+</div>
   </div>
 
   <!-- CHEESECAKES -->
@@ -258,8 +271,8 @@
     </div>
 
     <div class="item">
-      <h3>Oreo Cheesecake</h3>
-      <button type="button" onclick="addCheesecake('Oreo Cheesecake')">
+ <h3>Midnight Cookie Crunch</h3>
+    <button type="button" onclick="addCheesecake('Midnight Cookie Crunch')">  
         Add Slice
       </button>
     </div>
@@ -281,7 +294,7 @@
       <option value="Sunshine Crunch">Sunshine Crunch</option>
       <option value="Strawberry Crunch Dream">Strawberry Crunch Dream</option>
       <option value="Banana Strawberry Crunch Dream">Banana Strawberry Crunch Dream</option>
-      <option value="Biscoff Bliss">Biscoff Bliss</option>
+      <option value="Biscoff Bliss">Biscoff Bliss</option> <option value="Oreos and Cream Pudding">Oreos and Cream Pudding</option>
     </select>
 
     <label>Flavor 2</label>
@@ -292,7 +305,7 @@
       <option value="Sunshine Crunch">Sunshine Crunch</option>
       <option value="Strawberry Crunch Dream">Strawberry Crunch Dream</option>
       <option value="Banana Strawberry Crunch Dream">Banana Strawberry Crunch Dream</option>
-      <option value="Biscoff Bliss">Biscoff Bliss</option>
+      <option value="Biscoff Bliss">Biscoff Bliss</option> <option value="Oreos and Cream Pudding">Oreos and Cream Pudding</option>
     </select>
 
     <label>Flavor 3</label>
@@ -303,7 +316,7 @@
       <option value="Sunshine Crunch">Sunshine Crunch</option>
       <option value="Strawberry Crunch Dream">Strawberry Crunch Dream</option>
       <option value="Banana Strawberry Crunch Dream">Banana Strawberry Crunch Dream</option>
-      <option value="Biscoff Bliss">Biscoff Bliss</option>
+      <option value="Biscoff Bliss">Biscoff Bliss</option> <option value="Oreos and Cream Pudding">Oreos and Cream Pudding</option>
     </select>
 
     <label>Flavor 4</label>
@@ -314,7 +327,7 @@
       <option value="Sunshine Crunch">Sunshine Crunch</option>
       <option value="Strawberry Crunch Dream">Strawberry Crunch Dream</option>
       <option value="Banana Strawberry Crunch Dream">Banana Strawberry Crunch Dream</option>
-      <option value="Biscoff Bliss">Biscoff Bliss</option>
+      <option value="Biscoff Bliss">Biscoff Bliss</option> <option value="Oreos and Cream Pudding">Oreos and Cream Pudding</option>
     </select>
 
     <button type="button" onclick="addFlight()">
@@ -444,7 +457,39 @@
 <script>
 
 let cart = [];
+const DROP_DAY = false;
 
+const DROP_DAY_ITEMS = [
+  "Regular Banana Pudding",
+  "Peach Cobbler Passion",
+  "Sunshine Crunch",
+  "Strawberry Crunch Dream",
+  "Banana Strawberry Crunch Dream",
+  "Biscoff Bliss"
+];
+
+function applyDropDay() {
+  const puddingSection = Array.from(document.querySelectorAll(".section"))
+    .find(section =>
+      section.querySelector("h2")?.textContent.includes("Pudding Cups")
+    );
+
+  if (!puddingSection) return;
+
+  const items = puddingSection.querySelectorAll(".item");
+
+  items.forEach(item => {
+    const title = item.querySelector("h3")?.textContent.trim();
+
+    if (!DROP_DAY) {
+      item.style.display = "";
+    } else {
+      item.style.display = DROP_DAY_ITEMS.includes(title) ? "" : "none";
+    }
+  });
+}
+
+applyDropDay();
 function addPudding(type) {
 
   let name;
@@ -504,7 +549,14 @@ function addPudding(type) {
     size = select.options[select.selectedIndex].text;
     price = Number(select.value);
   }
+if (type === "oreo") {
+  name = "Oreos and Cream Pudding";
 
+  let select = document.getElementById("oreoSize");
+
+  size = select.options[select.selectedIndex].text;
+  price = Number(select.value);
+}
   cart.push({
     name: name + " - " + size,
     price: price
