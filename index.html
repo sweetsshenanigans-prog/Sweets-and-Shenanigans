@@ -490,7 +490,7 @@ function applyDropDay() {
   if (puddingSection) {
     puddingSection.querySelectorAll(".item").forEach(item => {
       const title = item.querySelector("h3")?.textContent.trim();
-      item.style.display = DROP_DAY_ITEMS.includes(title) ? "" : "none";
+      item.hidden = !DROP_DAY_ITEMS.includes(title);
     });
   }
 
