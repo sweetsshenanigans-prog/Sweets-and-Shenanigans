@@ -499,6 +499,18 @@ function applyDropDay() {
       item.style.display = "";
     });
   }
+if (DROP_DAY) {
+    ["flightFlavor1", "flightFlavor2", "flightFlavor3", "flightFlavor4"].forEach(id => {
+        const select = document.getElementById(id);
+        if (!select) return;
+
+        Array.from(select.options).forEach(option => {
+            if (option.value && !DROP_DAY_ITEMS.includes(option.value)) {
+                option.remove();
+            }
+        });
+    });
+}
 }
 
 applyDropDay();
