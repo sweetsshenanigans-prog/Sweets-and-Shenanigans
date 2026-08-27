@@ -245,7 +245,50 @@
 </div>
   </div>
 
-  <!-- CHEESECAKES -->
+<!-- A SPOONFUL OF TROUBLE -->
+<div class="section" id="spoonfulTroubleSection" style="display:none;">
+  <h2>🥄 A Spoonful of Trouble</h2>
+  <p class="small-text">Cake Pudding Line</p>
+
+  <div class="item">
+    <h3>B.P. Delight</h3>
+
+    <select id="bpDelightSize">
+      <option value="4">5 oz - $4</option>
+      <option value="7">8 oz - $7</option>
+    </select>
+
+    <button type="button" onclick="addSpoonful('bpDelight')">
+      Add to Order
+    </button>
+  </div>
+
+  <div class="item">
+    <h3>Biscoff Bliss</h3>
+
+    <select id="biscoffBlissSize">
+      <option value="4">5 oz - $4</option>
+      <option value="7">8 oz - $7</option>
+    </select>
+
+    <button type="button" onclick="addSpoonful('biscoffBliss')">
+      Add to Order
+    </button>
+  </div>
+
+  <div class="item">
+    <h3>Peach Cobbler Passion</h3>
+
+    <select id="peachCobblerSize">
+      <option value="4">5 oz - $4</option>
+      <option value="7">8 oz - $7</option>
+    </select>
+
+    <button type="button" onclick="addSpoonful('peachCobbler')">
+      Add to Order
+    </button>
+  </div>
+</div>  <!-- CHEESECAKES -->
   <div class="section">
     <h2>🍰 Cheesecake Slices — $7</h2>
 
@@ -458,7 +501,8 @@
 
 let cart = [];
 const DROP_DAY = true;
-
+const SPOONFUL_TROUBLE = false;
+  
 const DROP_DAY_ITEMS = [
   "Regular Banana Pudding",
   "Strawberry Crunch Dream",
@@ -514,7 +558,16 @@ if (DROP_DAY) {
 }
 
 applyDropDay();
-function addPudding(type) {
+  
+function applySpoonfulTrouble() {
+  const section = document.getElementById("spoonfulTroubleSection");
+
+  if (section) {
+    section.style.display = SPOONFUL_TROUBLE ? "" : "none";
+  }
+}
+
+applySpoonfulTrouble();function addPudding(type) {
 
   let name;
   let size;
@@ -590,7 +643,40 @@ if (type === "oreo") {
 }
 
 
-function addFlight() {
+function addSpoonful(type) {
+  let name;
+  let size;
+  let price;
+
+  if (type === "bpDelight") {
+    name = "B.P. Delight";
+    let select = document.getElementById("bpDelightSize");
+    size = select.options[select.selectedIndex].text;
+    price = Number(select.value);
+  }
+
+  if (type === "biscoffBliss") {
+    name = "Biscoff Bliss";
+    let select = document.getElementById("biscoffBlissSize");
+    size = select.options[select.selectedIndex].text;
+    price = Number(select.value);
+  }
+
+  if (type === "peachCobbler") {
+    name = "Peach Cobbler Passion";
+    let select = document.getElementById("peachCobblerSize");
+    size = select.options[select.selectedIndex].text;
+    price = Number(select.value);
+  }
+
+  cart.push({
+    name: name + " - " + size,
+    price: price
+  });
+
+  updateCart();
+}
+  function addFlight() {
 
   const flavor1 =
     document.getElementById("flightFlavor1").value;
