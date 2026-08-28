@@ -316,7 +316,7 @@
       <option value="Sunshine Crunch">Sunshine Crunch</option>
       <option value="Strawberry Crunch Dream">Strawberry Crunch Dream</option>
       <option value="Banana Strawberry Crunch Dream">Banana Strawberry Crunch Dream</option>
-      <option value="Biscoff Bliss">Biscoff Bliss</option> <option value="Oreos and Cream Pudding">Oreos and Cream Pudding</option>
+      
     </select>
 
     <label>Flavor 2</label>
@@ -327,7 +327,7 @@
       <option value="Sunshine Crunch">Sunshine Crunch</option>
       <option value="Strawberry Crunch Dream">Strawberry Crunch Dream</option>
       <option value="Banana Strawberry Crunch Dream">Banana Strawberry Crunch Dream</option>
-      <option value="Biscoff Bliss">Biscoff Bliss</option> <option value="Oreos and Cream Pudding">Oreos and Cream Pudding</option>
+      
     </select>
 
     <label>Flavor 3</label>
@@ -338,7 +338,7 @@
       <option value="Sunshine Crunch">Sunshine Crunch</option>
       <option value="Strawberry Crunch Dream">Strawberry Crunch Dream</option>
       <option value="Banana Strawberry Crunch Dream">Banana Strawberry Crunch Dream</option>
-      <option value="Biscoff Bliss">Biscoff Bliss</option> <option value="Oreos and Cream Pudding">Oreos and Cream Pudding</option>
+   
     </select>
 
     <label>Flavor 4</label>
@@ -349,7 +349,7 @@
       <option value="Sunshine Crunch">Sunshine Crunch</option>
       <option value="Strawberry Crunch Dream">Strawberry Crunch Dream</option>
       <option value="Banana Strawberry Crunch Dream">Banana Strawberry Crunch Dream</option>
-      <option value="Biscoff Bliss">Biscoff Bliss</option> <option value="Oreos and Cream Pudding">Oreos and Cream Pudding</option>
+    
     </select>
 
     <button type="button" onclick="addFlight()">
@@ -485,7 +485,7 @@ const SPOONFUL_TROUBLE = false;
 const DROP_DAY_ITEMS = [
   "Regular Banana Pudding",
   "Strawberry Crunch Dream",
-  "Biscoff Bliss",
+ 
   "Oreos and Cream Pudding",
   "Banana Strawberry Crunch Dream"
 ];
@@ -636,12 +636,7 @@ function addSpoonful(type) {
     price = Number(select.value);
   }
 
-  if (type === "biscoffBliss") {
-    name = "Biscoff Bliss";
-    let select = document.getElementById("biscoffBlissSize");
-    size = select.options[select.selectedIndex].text;
-    price = Number(select.value);
-  }
+  
 
   if (type === "peachCobbler") {
     name = "Peach Cobbler Passion";
