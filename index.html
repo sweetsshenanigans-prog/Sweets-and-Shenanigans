@@ -7,7 +7,7 @@
 
   <style>
     body {
-      font-family: Arial, sans-serif;f
+      font-family: Arial, sans-serif;
       margin: 0;
       background: #fff7f2;
       color: #333;
@@ -127,10 +127,14 @@
 
 <div class="container">
 
-  <!-- PUDDINGS -->
+  <!-- =========================
+       REGULAR PUDDING PRODUCTS
+       ========================= -->
+
   <div class="section">
     <h2>🍮 Pudding Cups</h2>
 
+    <!-- REGULAR BANANA PUDDING -->
     <div class="item">
       <h3>Regular Banana Pudding</h3>
 
@@ -138,6 +142,7 @@
         <option value="Regular Banana Pudding - With Bananas">
           With Bananas
         </option>
+
         <option value="Regular Banana Pudding - Without Bananas">
           Without Bananas
         </option>
@@ -150,41 +155,16 @@
         <option value="10">12 oz - $10</option>
       </select>
 
-      <button type="button" onclick="addPudding('banana')">
+      <button
+        type="button"
+        onclick="addPudding('banana')"
+      >
         Add to Order
       </button>
     </div>
 
-    <div class="item">
-      <h3>Peach Cobbler Passion</h3>
 
-      <select id="peachSize">
-        <option value="3">3 oz - $3</option>
-        <option value="4">5 oz - $4</option>
-        <option value="7">8 oz - $7</option>
-        <option value="10">12 oz - $10</option>
-      </select>
-
-      <button type="button" onclick="addPudding('peach')">
-        Add to Order
-      </button>
-    </div>
-
-    <div class="item">
-      <h3>Sunshine Crunch</h3>
-
-      <select id="sunshineSize">
-        <option value="3">3 oz - $3</option>
-        <option value="4">5 oz - $4</option>
-        <option value="7">8 oz - $7</option>
-        <option value="10">12 oz - $10</option>
-      </select>
-
-      <button type="button" onclick="addPudding('sunshine')">
-        Add to Order
-      </button>
-    </div>
-
+    <!-- STRAWBERRY CRUNCH DREAM -->
     <div class="item">
       <h3>Strawberry Crunch Dream</h3>
 
@@ -195,11 +175,36 @@
         <option value="10">12 oz - $10</option>
       </select>
 
-      <button type="button" onclick="addPudding('strawberry')">
+      <button
+        type="button"
+        onclick="addPudding('strawberry')"
+      >
         Add to Order
       </button>
     </div>
 
+
+    <!-- SUNSHINE CRUNCH -->
+    <div class="item">
+      <h3>Sunshine Crunch</h3>
+
+      <select id="sunshineSize">
+        <option value="3">3 oz - $3</option>
+        <option value="4">5 oz - $4</option>
+        <option value="7">8 oz - $7</option>
+        <option value="10">12 oz - $10</option>
+      </select>
+
+      <button
+        type="button"
+        onclick="addPudding('sunshine')"
+      >
+        Add to Order
+      </button>
+    </div>
+
+
+    <!-- BANANA STRAWBERRY CRUNCH DREAM -->
     <div class="item">
       <h3>Banana Strawberry Crunch Dream</h3>
 
@@ -210,172 +215,265 @@
         <option value="10">12 oz - $10</option>
       </select>
 
-      <button type="button" onclick="addPudding('bananaStrawberry')">
+      <button
+        type="button"
+        onclick="addPudding('bananaStrawberry')"
+      >
         Add to Order
       </button>
     </div>
 
-<div class="item">
-  <h3>Oreos and Cream Pudding</h3>
 
-  <select id="oreoSize">
-    <option value="3">3 oz - $3</option>
-    <option value="4">5 oz - $4</option>
-    <option value="7">8 oz - $7</option>
-    <option value="10">12 oz - $10</option>
-  </select>
+    <!-- OREOS AND CREAM -->
+    <div class="item">
+      <h3>Oreos and Cream Pudding</h3>
 
-  <button type="button" onclick="addPudding('oreo')">
-    Add to Order
-  </button>
-</div>
+      <select id="oreoSize">
+        <option value="3">3 oz - $3</option>
+        <option value="4">5 oz - $4</option>
+        <option value="7">8 oz - $7</option>
+        <option value="10">12 oz - $10</option>
+      </select>
+
+      <button
+        type="button"
+        onclick="addPudding('oreo')"
+      >
+        Add to Order
+      </button>
+    </div>
+
   </div>
 
-<!-- A SPOONFUL OF TROUBLE -->
-<div class="section" id="spoonfulTroubleSection" style="display:none;">
-  <h2>🥄 A Spoonful of Trouble</h2>
-  <p class="small-text">Cake Pudding Line</p>
 
-  <div class="item">
-    <h3>B.P. Delight</h3>
+  <!-- =========================
+       A SPOONFUL OF TROUBLE
+       ========================= -->
 
-    <select id="bpDelightSize">
-      <option value="4">5 oz - $4</option>
-      <option value="7">8 oz - $7</option>
-    </select>
+  <div
+    class="section"
+    id="spoonfulTroubleSection"
+    style="display:none;"
+  >
 
-    <button type="button" onclick="addSpoonful('bpDelight')">
-      Add to Order
-    </button>
+    <h2>🥄 A Spoonful of Trouble</h2>
+
+    <p class="small-text">
+      Cake Pudding Line
+    </p>
+
+
+    <!-- B.P. DELIGHT -->
+    <div class="item">
+      <h3>B.P. Delight</h3>
+
+      <select id="bpDelightSize">
+        <option value="4">5 oz - $4</option>
+        <option value="7">8 oz - $7</option>
+      </select>
+
+      <button
+        type="button"
+        onclick="addSpoonful('bpDelight')"
+      >
+        Add to Order
+      </button>
+    </div>
+
+
+    <!-- BISCOFF BLISS -->
+    <div class="item">
+      <h3>Biscoff Bliss</h3>
+
+      <select id="biscoffBlissSize">
+        <option value="4">5 oz - $4</option>
+        <option value="7">8 oz - $7</option>
+      </select>
+
+      <button
+        type="button"
+        onclick="addSpoonful('biscoffBliss')"
+      >
+        Add to Order
+      </button>
+    </div>
+
+
+    <!-- PEACH COBBLER PASSION -->
+    <div class="item">
+      <h3>Peach Cobbler Passion</h3>
+
+      <select id="peachCobblerSize">
+        <option value="4">5 oz - $4</option>
+        <option value="7">8 oz - $7</option>
+      </select>
+
+      <button
+        type="button"
+        onclick="addSpoonful('peachCobbler')"
+      >
+        Add to Order
+      </button>
+    </div>
+
   </div>
 
-  <div class="item">
-    <h3>Biscoff Bliss</h3>
 
-    <select id="biscoffBlissSize">
-      <option value="4">5 oz - $4</option>
-      <option value="7">8 oz - $7</option>
-    </select>
+  <!-- =========================
+       CHEESECAKES
+       ========================= -->
 
-    <button type="button" onclick="addSpoonful('biscoffBliss')">
-      Add to Order
-    </button>
-  </div>
-
-  <div class="item">
-    <h3>Peach Cobbler Passion</h3>
-
-    <select id="peachCobblerSize">
-      <option value="4">5 oz - $4</option>
-      <option value="7">8 oz - $7</option>
-    </select>
-
-    <button type="button" onclick="addSpoonful('peachCobbler')">
-      Add to Order
-    </button>
-  </div>
-</div>  <!-- CHEESECAKES -->
   <div class="section">
+
     <h2>🍰 Cheesecake Slices — $7</h2>
+
 
     <div class="item">
       <h3>Apple Pie</h3>
-      <button type="button" onclick="addCheesecake('Apple Pie')">
+
+      <button
+        type="button"
+        onclick="addCheesecake('Apple Pie')"
+      >
         Add Slice
       </button>
     </div>
+
 
     <div class="item">
       <h3>Jaylen's Peanut Butter Bliss</h3>
-      <button type="button" onclick="addCheesecake('Jaylen\'s Peanut Butter Bliss')">
+
+      <button
+        type="button"
+        onclick="addCheesecake('Jaylen\'s Peanut Butter Bliss')"
+      >
         Add Slice
       </button>
     </div>
+
 
     <div class="item">
- <h3>Midnight Cookie Crunch</h3>
-    <button type="button" onclick="addCheesecake('Midnight Cookie Crunch')">  
+      <h3>Midnight Cookie Crunch</h3>
+
+      <button
+        type="button"
+        onclick="addCheesecake('Midnight Cookie Crunch')"
+      >
         Add Slice
       </button>
     </div>
+
   </div>
 
-  <!-- SHENANIGAN FLIGHT -->
+
+  <!-- =========================
+       SHENANIGAN FLIGHT
+       ========================= -->
+
   <div class="section">
+
     <h2>✨ Shenanigan Flight — $12</h2>
 
     <p>
       Choose any 4 flavors — four 3 oz sampler cups.
     </p>
 
+
     <label>Flavor 1</label>
+
     <select id="flightFlavor1">
-      <option value="">Choose a flavor</option>
-      <option value="Regular Banana Pudding">Regular Banana Pudding</option>
-      <option value="Peach Cobbler Passion">Peach Cobbler Passion</option>
-      <option value="Sunshine Crunch">Sunshine Crunch</option>
-      <option value="Strawberry Crunch Dream">Strawberry Crunch Dream</option>
-      <option value="Banana Strawberry Crunch Dream">Banana Strawberry Crunch Dream</option>
-      
+      <option value="">
+        Choose a flavor
+      </option>
     </select>
+
 
     <label>Flavor 2</label>
+
     <select id="flightFlavor2">
-      <option value="">Choose a flavor</option>
-      <option value="Regular Banana Pudding">Regular Banana Pudding</option>
-      <option value="Peach Cobbler Passion">Peach Cobbler Passion</option>
-      <option value="Sunshine Crunch">Sunshine Crunch</option>
-      <option value="Strawberry Crunch Dream">Strawberry Crunch Dream</option>
-      <option value="Banana Strawberry Crunch Dream">Banana Strawberry Crunch Dream</option>
-      
+      <option value="">
+        Choose a flavor
+      </option>
     </select>
+
 
     <label>Flavor 3</label>
+
     <select id="flightFlavor3">
-      <option value="">Choose a flavor</option>
-      <option value="Regular Banana Pudding">Regular Banana Pudding</option>
-      <option value="Peach Cobbler Passion">Peach Cobbler Passion</option>
-      <option value="Sunshine Crunch">Sunshine Crunch</option>
-      <option value="Strawberry Crunch Dream">Strawberry Crunch Dream</option>
-      <option value="Banana Strawberry Crunch Dream">Banana Strawberry Crunch Dream</option>
-   
+      <option value="">
+        Choose a flavor
+      </option>
     </select>
+
 
     <label>Flavor 4</label>
+
     <select id="flightFlavor4">
-      <option value="">Choose a flavor</option>
-      <option value="Regular Banana Pudding">Regular Banana Pudding</option>
-      <option value="Peach Cobbler Passion">Peach Cobbler Passion</option>
-      <option value="Sunshine Crunch">Sunshine Crunch</option>
-      <option value="Strawberry Crunch Dream">Strawberry Crunch Dream</option>
-      <option value="Banana Strawberry Crunch Dream">Banana Strawberry Crunch Dream</option>
-    
+      <option value="">
+        Choose a flavor
+      </option>
     </select>
 
-    <button type="button" onclick="addFlight()">
+
+    <button
+      type="button"
+      onclick="addFlight()"
+    >
       Add Shenanigan Flight — $12
     </button>
+
   </div>
 
-  <!-- CART -->
+
+  <!-- =========================
+       CART
+       ========================= -->
+
   <div class="section">
+
     <h2>🛒 Your Order</h2>
 
     <div id="cart">
+
       <p class="small-text">
         Your order is currently empty.
       </p>
+
     </div>
 
-    
-  <div class="total">
-  <div>Subtotal: $<span id="subtotal">0.00</span></div>
-  <div>Delivery Fee: $<span id="displayDeliveryFee">0.00</span></div>
-  <div><strong>Total: $<span id="displayTotal">0.00</span></strong></div>
-</div>
-  <!-- CUSTOMER INFORMATION -->
+
+    <div class="total">
+
+      <div>
+        Subtotal:
+        $<span id="subtotal">0.00</span>
+      </div>
+
+      <div>
+        Delivery Fee:
+        $<span id="displayDeliveryFee">0.00</span>
+      </div>
+
+      <div>
+        <strong>
+          Total:
+          $<span id="displayTotal">0.00</span>
+        </strong>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       CUSTOMER INFORMATION
+       ========================= -->
+
   <div class="section">
+
     <h2>📋 Customer Information</h2>
+
 
     <input
       type="text"
@@ -383,85 +481,133 @@
       placeholder="Full Name"
     >
 
+
     <input
       type="tel"
       id="phone"
       placeholder="Phone Number"
     >
 
-    <label>Order Date</label>
+
+    <label>
+      Order Date
+    </label>
+
 
     <input
       type="date"
       id="orderDate"
     >
-<h3>Pickup or Delivery?</h3>
 
-<label>
-  <input
-    type="radio"
-    name="delivery"
-    value="pickup"
-    checked
-    onclick="showDelivery(false)"
-  >
-  Pickup
-</label>
 
-<br><br>
+    <h3>
+      Pickup or Delivery?
+    </h3>
 
-<label>
-  <input
-    type="radio"
-    name="delivery"
-    value="delivery"
-    onclick="showDelivery(true)"
-  >
-  Delivery
-</label>
 
-<div id="deliveryBox" class="hidden">
+    <label>
 
-  <input
-    type="text"
-    id="address"
-    placeholder="Delivery Address"
-  >
+      <input
+        type="radio"
+        name="delivery"
+        value="pickup"
+        checked
+        onclick="showDelivery(false)"
+      >
 
-  <br><br>
+      Pickup
 
-  <input
-    type="text"
-    id="zip"
-    placeholder="Delivery ZIP Code"
-    maxlength="5"
-    inputmode="numeric"
-  >
+    </label>
 
-  <p class="small-text">
-    Delivery fee will be based on your ZIP code.
-  </p>
 
-  <p id="deliveryFeeDisplay" class="small-text">
-    Delivery Fee: $0
-  </p>
+    <br><br>
 
-</div>
-    
-    <h3>Payment Method</h3>
+
+    <label>
+
+      <input
+        type="radio"
+        name="delivery"
+        value="delivery"
+        onclick="showDelivery(true)"
+      >
+
+      Delivery
+
+    </label>
+
+
+    <div
+      id="deliveryBox"
+      class="hidden"
+    >
+
+      <input
+        type="text"
+        id="address"
+        placeholder="Delivery Address"
+      >
+
+
+      <br><br>
+
+
+      <input
+        type="text"
+        id="zip"
+        placeholder="Delivery ZIP Code"
+        maxlength="5"
+        inputmode="numeric"
+      >
+
+
+      <p class="small-text">
+        Delivery fee will be based on your ZIP code.
+      </p>
+
+
+      <p
+        id="deliveryFeeDisplay"
+        class="small-text"
+      >
+        Delivery Fee: $0
+      </p>
+
+    </div>
+
+
+    <h3>
+      Payment Method
+    </h3>
+
 
     <select id="paymentMethod">
-      <option value="Apple Pay">Apple Pay</option>
-      <option value="Zelle">Zelle</option>
-      <option value="Cash App">Cash App</option>
-      <option value="Cash">Cash</option>
+
+      <option value="Apple Pay">
+        Apple Pay
+      </option>
+
+      <option value="Zelle">
+        Zelle
+      </option>
+
+      <option value="Cash App">
+        Cash App
+      </option>
+
+      <option value="Cash">
+        Cash
+      </option>
+
     </select>
+
 
     <textarea
       id="notes"
       rows="4"
       placeholder="Order notes (optional)"
     ></textarea>
+
 
     <button
       type="button"
@@ -471,521 +617,1418 @@
       Submit Order
     </button>
 
+
     <p id="confirmation"></p>
+
   </div>
 
 </div>
 
+
 <script>
 
-let cart = [];
-const DROP_DAY = true;
-const SPOONFUL_TROUBLE = false;
-  
-const DROP_DAY_ITEMS = [
-  "Regular Banana Pudding",
-  "Strawberry Crunch Dream",
- 
-  "Oreos and Cream Pudding",
-  "Banana Strawberry Crunch Dream"
-];
+  /* =========================
+     CART
+     ========================= */
 
-function applyDropDay() {
-  const sections = Array.from(document.querySelectorAll(".section"));
+  let cart = [];
 
-  const puddingSection = sections.find(section =>
-    section.querySelector("h2")?.textContent.includes("Pudding Cups")
-  );
 
-  const cheesecakeSection = sections.find(section =>
-    section.querySelector("h2")?.textContent.includes("Cheesecake Slices")
-  );
+  /* =========================
+     SPOONFUL MASTER SWITCH
+     ========================= */
 
-  if (!DROP_DAY) {
-    sections.forEach(section => {
-      section.querySelectorAll(".item").forEach(item => {
-        item.style.display = "";
-      });
-    });
-    return;
-  }
+  const SPOONFUL_TROUBLE = false;
 
-  if (puddingSection) {
-    puddingSection.querySelectorAll(".item").forEach(item => {
-      const title = item.querySelector("h3")?.textContent.trim();
-      item.hidden = !DROP_DAY_ITEMS.includes(title);
-    });
-  }
 
-  if (cheesecakeSection) {
-    cheesecakeSection.querySelectorAll(".item").forEach(item => {
-      item.style.display = "";
-    });
-  }
-if (DROP_DAY) {
-    ["flightFlavor1", "flightFlavor2", "flightFlavor3", "flightFlavor4"].forEach(id => {
-        const select = document.getElementById(id);
-        if (!select) return;
+  /* =========================
+     CURRENT DROP DAY MENU
+     ========================= */
 
-        Array.from(select.options).forEach(option => {
-            if (option.value && !DROP_DAY_ITEMS.includes(option.value)) {
-                option.remove();
-            }
+  /*
+     THIS IS THE CUSTOMER MENU.
+
+     If a regular pudding is NOT listed here,
+     it will NOT appear to customers.
+
+     Sunshine Crunch is intentionally NOT listed
+     right now because it is not being made for
+     the current Drop Day.
+
+     When you are ready to offer Sunshine again,
+     simply add:
+
+     "Sunshine Crunch",
+
+     to this list.
+  */
+
+  const DROP_DAY_ITEMS = [
+
+    "Regular Banana Pudding",
+
+    "Strawberry Crunch Dream",
+
+    "Oreos and Cream Pudding",
+
+    "Banana Strawberry Crunch Dream"
+
+  ];
+
+
+  /* =========================
+     APPLY CURRENT DROP DAY MENU
+     ========================= */
+
+  function applyDropDay() {
+
+    const sections =
+      Array.from(
+        document.querySelectorAll(".section")
+      );
+
+
+    /* =========================
+       REGULAR PUDDINGS
+       ========================= */
+
+    const puddingSection =
+      sections.find(section =>
+        section
+          .querySelector("h2")
+          ?.textContent
+          .includes("Pudding Cups")
+      );
+
+
+    if (puddingSection) {
+
+      puddingSection
+        .querySelectorAll(".item")
+        .forEach(item => {
+
+          const title =
+            item
+              .querySelector("h3")
+              ?.textContent
+              .trim();
+
+
+          item.hidden =
+            !DROP_DAY_ITEMS.includes(title);
+
         });
+
+    }
+
+
+    /* =========================
+       CHEESECAKES
+       ========================= */
+
+    const cheesecakeSection =
+      sections.find(section =>
+        section
+          .querySelector("h2")
+          ?.textContent
+          .includes("Cheesecake Slices")
+      );
+
+
+    if (cheesecakeSection) {
+
+      cheesecakeSection
+        .querySelectorAll(".item")
+        .forEach(item => {
+
+          item.hidden = false;
+
+        });
+
+    }
+
+
+    /* =========================
+       SHENANIGAN FLIGHT
+
+       The flight uses ONLY the
+       current Drop Day menu.
+
+       This means:
+
+       Biscoff = NO
+       Peach Cobbler = NO
+
+       Sunshine = YES only when
+       Sunshine is added to the
+       current Drop Day list.
+
+       Oreo = YES
+       ========================= */
+
+    const flightSelects = [
+
+      "flightFlavor1",
+
+      "flightFlavor2",
+
+      "flightFlavor3",
+
+      "flightFlavor4"
+
+    ];
+
+
+    flightSelects.forEach(id => {
+
+      const select =
+        document.getElementById(id);
+
+
+      if (!select) return;
+
+
+      /*
+         Clear all current flavor choices
+         but keep the placeholder.
+      */
+
+      select.innerHTML =
+        '<option value="">Choose a flavor</option>';
+
+
+      /*
+         Add the current Drop Day flavors.
+      */
+
+      DROP_DAY_ITEMS.forEach(flavor => {
+
+        const option =
+          document.createElement("option");
+
+
+        option.value =
+          flavor;
+
+
+        option.textContent =
+          flavor;
+
+
+        select.appendChild(
+          option
+        );
+
+      });
+
     });
-}
-}
 
-applyDropDay();
-  
-function applySpoonfulTrouble() {
-  const section = document.getElementById("spoonfulTroubleSection");
-
-  if (section) {
-    section.style.display = SPOONFUL_TROUBLE ? "" : "none";
   }
-}
 
-document.addEventListener("DOMContentLoaded", applySpoonfulTrouble);
-  
+
+  /* =========================
+     SPOONFUL OF TROUBLE
+     ========================= */
+
+  function applySpoonfulTrouble() {
+
+    const section =
+      document.getElementById(
+        "spoonfulTroubleSection"
+      );
+
+
+    if (!section) return;
+
+
+    section.style.display =
+      SPOONFUL_TROUBLE
+        ? ""
+        : "none";
+
+  }
+
+
+  /* =========================
+     PUDDING ORDERS
+     ========================= */
+
   function addPudding(type) {
 
-  let name;
-  let size;
-  let price;
+    let name;
 
-  if (type === "banana") {
-    name = document.getElementById("bananaOption").value;
+    let size;
 
-    let select = document.getElementById("bananaSize");
+    let price;
 
-    size = select.options[select.selectedIndex].text;
-    price = Number(select.value);
+
+    /* REGULAR BANANA */
+
+    if (type === "banana") {
+
+      name =
+        document.getElementById(
+          "bananaOption"
+        ).value;
+
+
+      const select =
+        document.getElementById(
+          "bananaSize"
+        );
+
+
+      size =
+        select.options[
+          select.selectedIndex
+        ].text;
+
+
+      price =
+        Number(select.value);
+
+    }
+
+
+    /* STRAWBERRY */
+
+    if (type === "strawberry") {
+
+      name =
+        "Strawberry Crunch Dream";
+
+
+      const select =
+        document.getElementById(
+          "strawberrySize"
+        );
+
+
+      size =
+        select.options[
+          select.selectedIndex
+        ].text;
+
+
+      price =
+        Number(select.value);
+
+    }
+
+
+    /* SUNSHINE */
+
+    if (type === "sunshine") {
+
+      name =
+        "Sunshine Crunch";
+
+
+      const select =
+        document.getElementById(
+          "sunshineSize"
+        );
+
+
+      size =
+        select.options[
+          select.selectedIndex
+        ].text;
+
+
+      price =
+        Number(select.value);
+
+    }
+
+
+    /* BANANA STRAWBERRY */
+
+    if (type === "bananaStrawberry") {
+
+      name =
+        "Banana Strawberry Crunch Dream";
+
+
+      const select =
+        document.getElementById(
+          "bananaStrawberrySize"
+        );
+
+
+      size =
+        select.options[
+          select.selectedIndex
+        ].text;
+
+
+      price =
+        Number(select.value);
+
+    }
+
+
+    /* OREO */
+
+    if (type === "oreo") {
+
+      name =
+        "Oreos and Cream Pudding";
+
+
+      const select =
+        document.getElementById(
+          "oreoSize"
+        );
+
+
+      size =
+        select.options[
+          select.selectedIndex
+        ].text;
+
+
+      price =
+        Number(select.value);
+
+    }
+
+
+    cart.push({
+
+      name:
+        name + " - " + size,
+
+      price:
+        price
+
+    });
+
+
+    updateCart();
+
   }
 
-  if (type === "peach") {
-    name = "Peach Cobbler Passion";
 
-    let select = document.getElementById("peachSize");
+  /* =========================
+     SPOONFUL ORDERS
+     ========================= */
 
-    size = select.options[select.selectedIndex].text;
-    price = Number(select.value);
+  function addSpoonful(type) {
+
+    let name;
+
+    let size;
+
+    let price;
+
+
+    /* B.P. DELIGHT */
+
+    if (type === "bpDelight") {
+
+      name =
+        "B.P. Delight";
+
+
+      const select =
+        document.getElementById(
+          "bpDelightSize"
+        );
+
+
+      size =
+        select.options[
+          select.selectedIndex
+        ].text;
+
+
+      price =
+        Number(select.value);
+
+    }
+
+
+    /* BISCOFF BLISS */
+
+    if (type === "biscoffBliss") {
+
+      name =
+        "Biscoff Bliss";
+
+
+      const select =
+        document.getElementById(
+          "biscoffBlissSize"
+        );
+
+
+      size =
+        select.options[
+          select.selectedIndex
+        ].text;
+
+
+      price =
+        Number(select.value);
+
+    }
+
+
+    /* PEACH COBBLER PASSION */
+
+    if (type === "peachCobbler") {
+
+      name =
+        "Peach Cobbler Passion";
+
+
+      const select =
+        document.getElementById(
+          "peachCobblerSize"
+        );
+
+
+      size =
+        select.options[
+          select.selectedIndex
+        ].text;
+
+
+      price =
+        Number(select.value);
+
+    }
+
+
+    cart.push({
+
+      name:
+        name + " - " + size,
+
+      price:
+        price
+
+    });
+
+
+    updateCart();
+
   }
 
-  if (type === "sunshine") {
-    name = "Sunshine Crunch";
 
-    let select = document.getElementById("sunshineSize");
+  /* =========================
+     SHENANIGAN FLIGHT
+     ========================= */
 
-    size = select.options[select.selectedIndex].text;
-    price = Number(select.value);
-  }
-
-  if (type === "strawberry") {
-    name = "Strawberry Crunch Dream";
-
-    let select = document.getElementById("strawberrySize");
-
-    size = select.options[select.selectedIndex].text;
-    price = Number(select.value);
-  }
-
-  if (type === "bananaStrawberry") {
-    name = "Banana Strawberry Crunch Dream";
-
-    let select = document.getElementById("bananaStrawberrySize");
-
-    size = select.options[select.selectedIndex].text;
-    price = Number(select.value);
-  }
-
-  if (type === "biscoff") {
-    name = "Biscoff Bliss";
-
-    let select = document.getElementById("biscoffSize");
-
-    size = select.options[select.selectedIndex].text;
-    price = Number(select.value);
-  }
-if (type === "oreo") {
-  name = "Oreos and Cream Pudding";
-
-  let select = document.getElementById("oreoSize");
-
-  size = select.options[select.selectedIndex].text;
-  price = Number(select.value);
-}
-  cart.push({
-    name: name + " - " + size,
-    price: price
-  });
-
-  updateCart();
-}
-
-
-function addSpoonful(type) {
-  let name;
-  let size;
-  let price;
-
-  if (type === "bpDelight") {
-    name = "B.P. Delight";
-    let select = document.getElementById("bpDelightSize");
-    size = select.options[select.selectedIndex].text;
-    price = Number(select.value);
-  }
-
-  
-
-  if (type === "peachCobbler") {
-    name = "Peach Cobbler Passion";
-    let select = document.getElementById("peachCobblerSize");
-    size = select.options[select.selectedIndex].text;
-    price = Number(select.value);
-  }
-
-  cart.push({
-    name: name + " - " + size,
-    price: price
-  });
-
-  updateCart();
-}
   function addFlight() {
 
-  const flavor1 =
-    document.getElementById("flightFlavor1").value;
+    const flavor1 =
+      document.getElementById(
+        "flightFlavor1"
+      ).value;
 
-  const flavor2 =
-    document.getElementById("flightFlavor2").value;
 
-  const flavor3 =
-    document.getElementById("flightFlavor3").value;
+    const flavor2 =
+      document.getElementById(
+        "flightFlavor2"
+      ).value;
 
-  const flavor4 =
-    document.getElementById("flightFlavor4").value;
 
-  if (!flavor1 || !flavor2 || !flavor3 || !flavor4) {
-    alert(
-      "Please choose all 4 flavors for your Shenanigan Flight."
-    );
-    return;
+    const flavor3 =
+      document.getElementById(
+        "flightFlavor3"
+      ).value;
+
+
+    const flavor4 =
+      document.getElementById(
+        "flightFlavor4"
+      ).value;
+
+
+    if (
+      !flavor1 ||
+      !flavor2 ||
+      !flavor3 ||
+      !flavor4
+    ) {
+
+      alert(
+        "Please choose all 4 flavors for your Shenanigan Flight."
+      );
+
+
+      return;
+
+    }
+
+
+    const flightName =
+      "Shenanigan Flight: " +
+
+      flavor1 + ", " +
+
+      flavor2 + ", " +
+
+      flavor3 + ", " +
+
+      flavor4;
+
+
+    cart.push({
+
+      name:
+        flightName,
+
+      price:
+        12
+
+    });
+
+
+    updateCart();
+
   }
 
-  const flightName =
-    "Shenanigan Flight: " +
-    flavor1 + ", " +
-    flavor2 + ", " +
-    flavor3 + ", " +
-    flavor4;
 
-  cart.push({
-    name: flightName,
-    price: 12
-  });
+  /* =========================
+     CHEESECAKES
+     ========================= */
 
-  updateCart();
-}
+  function addCheesecake(name) {
 
+    cart.push({
 
-function addCheesecake(name) {
+      name:
+        name + " - Slice",
 
-  cart.push({
-    name: name + " - Slice",
-    price: 7
-  });
+      price:
+        7
 
-  updateCart();
-}
+    });
 
 
-function removeItem(index) {
+    updateCart();
 
-  cart.splice(index, 1);
-
-  updateCart();
-}
+  }
 
 
-function updateCart() {
-  const cartBox = document.getElementById("cart");
+  /* =========================
+     REMOVE CART ITEM
+     ========================= */
 
-  if (cart.length === 0) {
+  function removeItem(index) {
+
+    cart.splice(index, 1);
+
+    updateCart();
+
+  }
+
+
+  /* =========================
+     UPDATE CART
+     ========================= */
+
+  function updateCart() {
+
+    const cartBox =
+      document.getElementById(
+        "cart"
+      );
+
+
+    if (cart.length === 0) {
+
+      cartBox.innerHTML =
+        '<p class="small-text">Your order is currently empty.</p>';
+
+
+      document.getElementById(
+        "subtotal"
+      ).innerText =
+        "0.00";
+
+
+      document.getElementById(
+        "displayDeliveryFee"
+      ).innerText =
+        "0.00";
+
+
+      document.getElementById(
+        "displayTotal"
+      ).innerText =
+        "0.00";
+
+
+      return;
+
+    }
+
+
     cartBox.innerHTML =
-      '<p class="small-text">Your order is currently empty.</p>';
-
-    document.getElementById("subtotal").innerText = "0.00";
-    document.getElementById("displayDeliveryFee").innerText = "0.00";
-    document.getElementById("displayTotal").innerText = "0.00";
-    return;
-  }
-
-  cartBox.innerHTML = "";
-
-  let subtotal = 0;
-
-  cart.forEach(function(item, index) {
-    subtotal += item.price;
-
-    let row = document.createElement("div");
-    row.className = "cart-item";
-
-    row.innerHTML =
-      "<span>" +
-      item.name +
-      "</span>" +
-      "<span>$" +
-      item.price.toFixed(2) +
-      ' <button type="button" onclick="removeItem(' +
-      index +
-      ')">Remove</button></span>';
-
-    cartBox.appendChild(row);
-  });
-
-  const delivery =
-    document.querySelector('input[name="delivery"]:checked')?.value;
-
-  let deliveryFee = 0;
-
-  if (delivery === "delivery") {
-    const zip = document.getElementById("zip")?.value.trim();
-
-    if (zip) {
-      deliveryFee = getDeliveryInfo(zip).fee;
-    }
-  }
-
-  const total = subtotal + deliveryFee;
-
-  document.getElementById("subtotal").innerText =
-    subtotal.toFixed(2);
-
-  document.getElementById("displayDeliveryFee").innerText =
-    deliveryFee.toFixed(2);
-
-  document.getElementById("displayTotal").innerText =
-    total.toFixed(2);
-}
+      "";
 
 
-function getDeliveryInfo(zip) {
-  const zone1 = ["14215", "14214", "14208", "14211", "14216"];
-  const zone2 = ["14209", "14212", "14213", "14210", "14222"];
-  const zone3 = ["14201", "14202", "14203", "14204", "14206", "14220", "14223"];
-  const zone4 = ["14207", "14217", "14218", "14219", "14221", "14224", "14225", "14226", "14227", "14228"];
+    let subtotal =
+      0;
 
-  if (zone1.includes(zip)) {
-    return { zone: "Zone 1", fee: 3 };
-  }
 
-  if (zone2.includes(zip)) {
-    return { zone: "Zone 2", fee: 5 };
-  }
+    cart.forEach(
+      function(item, index) {
 
-  if (zone3.includes(zip)) {
-    return { zone: "Zone 3", fee: 8 };
-  }
+        subtotal +=
+          item.price;
 
-  if (zone4.includes(zip)) {
-    return { zone: "Zone 4", fee: 10 };
-  }
 
-  return { zone: "", fee: 0 };
-}
+        const row =
+          document.createElement(
+            "div"
+          );
 
-function showDelivery(show) {
-  document
-    .getElementById("deliveryBox")
-    .classList
-    .toggle("hidden", !show);
 
-  const zipInput = document.getElementById("zip");
+        row.className =
+          "cart-item";
 
-  if (show && zipInput) {
-    zipInput.oninput = function () {
-      const zip = zipInput.value.trim();
-      const info = getDeliveryInfo(zip);
-      const feeDisplay = document.getElementById("deliveryFeeDisplay");
 
-      if (zip.length === 5 && info.fee > 0) {
-        feeDisplay.innerText =
-          "Delivery Fee: $" + info.fee.toFixed(2) + " (" + info.zone + ")";
-      } else if (zip.length === 5) {
-        feeDisplay.innerText =
-          "Delivery area not available. Please choose pickup.";
-      } else {
-        feeDisplay.innerText = "Delivery Fee: $0";
+        row.innerHTML =
+
+          "<span>" +
+
+          item.name +
+
+          "</span>" +
+
+          "<span>$" +
+
+          item.price.toFixed(2) +
+
+          ' <button type="button" onclick="removeItem(' +
+
+          index +
+
+          ')">Remove</button></span>';
+
+
+        cartBox.appendChild(
+          row
+        );
+
       }
-   updateCart();
-  }
-  }
-}
+    );
 
-function submitOrder() {
 
-  if (cart.length === 0) {
-    alert("Please add something to your order first.");
-    return;
-  }
+    const delivery =
+      document.querySelector(
+        'input[name="delivery"]:checked'
+      )?.value;
 
-  let name =
-    document.getElementById("customerName").value;
 
-  let phone =
-    document.getElementById("phone").value;
+    let deliveryFee =
+      0;
 
-  let orderDate =
-    document.getElementById("orderDate").value;
 
-  let delivery =
-    document.querySelector(
-      'input[name="delivery"]:checked'
-    ).value;
+    if (
+      delivery === "delivery"
+    ) {
 
-  let address =
-    document.getElementById("address").value;
+      const zip =
+        document.getElementById(
+          "zip"
+        )?.value.trim();
 
-  let zip =
-    document.getElementById("zip").value.trim();
 
-  let paymentMethod =
-    document.getElementById("paymentMethod").value;
+      if (zip) {
 
-  let notes =
-    document.getElementById("notes").value;
+        deliveryFee =
+          getDeliveryInfo(
+            zip
+          ).fee;
 
-  if (!name || !phone) {
-    alert("Please enter your name and phone number.");
-    return;
-  }
+      }
 
-  let deliveryFee = 0;
-  let deliveryZone = "";
-
-  if (delivery === "delivery") {
-
-    if (!address) {
-      alert("Please enter your delivery address.");
-      return;
     }
 
-    if (!/^\d{5}$/.test(zip)) {
-      alert("Please enter a valid 5-digit delivery ZIP code.");
-      return;
-    }
+
+    const total =
+      subtotal +
+      deliveryFee;
+
+
+    document.getElementById(
+      "subtotal"
+    ).innerText =
+      subtotal.toFixed(2);
+
+
+    document.getElementById(
+      "displayDeliveryFee"
+    ).innerText =
+      deliveryFee.toFixed(2);
+
+
+    document.getElementById(
+      "displayTotal"
+    ).innerText =
+      total.toFixed(2);
+
+  }
+
+
+  /* =========================
+     DELIVERY INFORMATION
+     ========================= */
+
+  function getDeliveryInfo(zip) {
 
     const zone1 = [
+
       "14215",
+
       "14214",
+
       "14208",
+
       "14211",
+
       "14216"
+
     ];
+
 
     const zone2 = [
+
       "14209",
+
       "14212",
+
       "14213",
+
       "14210",
+
       "14222"
+
     ];
+
 
     const zone3 = [
+
       "14201",
+
       "14202",
+
       "14203",
+
       "14204",
+
       "14206",
+
       "14220",
+
       "14223"
+
     ];
+
 
     const zone4 = [
+
       "14207",
+
       "14217",
+
       "14218",
+
       "14219",
+
       "14221",
+
       "14224",
+
       "14225",
+
       "14226",
+
       "14227",
+
       "14228"
+
     ];
 
-    if (zone1.includes(zip)) {
-      deliveryZone = "Zone 1";
-      deliveryFee = 3;
-    } else if (zone2.includes(zip)) {
-      deliveryZone = "Zone 2";
-      deliveryFee = 5;
-    } else if (zone3.includes(zip)) {
-      deliveryZone = "Zone 3";
-      deliveryFee = 8;
-    } else if (zone4.includes(zip)) {
-      deliveryZone = "Zone 4";
-      deliveryFee = 10;
-    } else {
-      alert(
-        "Sorry, that ZIP code is outside our current delivery area. Please choose pickup."
-      );
-      return;
+
+    if (
+      zone1.includes(zip)
+    ) {
+
+      return {
+
+        zone:
+          "Zone 1",
+
+        fee:
+          3
+
+      };
+
     }
+
+
+    if (
+      zone2.includes(zip)
+    ) {
+
+      return {
+
+        zone:
+          "Zone 2",
+
+        fee:
+          5
+
+      };
+
+    }
+
+
+    if (
+      zone3.includes(zip)
+    ) {
+
+      return {
+
+        zone:
+          "Zone 3",
+
+        fee:
+          8
+
+      };
+
+    }
+
+
+    if (
+      zone4.includes(zip)
+    ) {
+
+      return {
+
+        zone:
+          "Zone 4",
+
+        fee:
+          10
+
+      };
+
+    }
+
+
+    return {
+
+      zone:
+        "",
+
+      fee:
+        0
+
+    };
+
   }
 
-  let subtotal =
-    cart.reduce(function(total, item) {
-      return total + item.price;
-    }, 0);
 
-  let total =
-    subtotal + deliveryFee;
+  /* =========================
+     SHOW DELIVERY
+     ========================= */
 
-  let items =
-    cart.map(function(item) {
-      return item.name +
-        " - $" +
-        item.price.toFixed(2);
-    }).join("\n");
+  function showDelivery(show) {
 
-  let orderData = {
-    customerName: name,
-    phone: phone,
-    orderDate: orderDate,
-    items: items,
-    subtotal: subtotal.toFixed(2),
-    fulfillment: delivery,
-    address: address,
-    distance: deliveryZone,
-    deliveryFee: deliveryFee.toFixed(2),
-    total: total.toFixed(2),
-    paymentMethod: paymentMethod,
-    paymentStatus: "Pending",
-    zip: zip,
-    notes: notes
-  };
+    document
+      .getElementById(
+        "deliveryBox"
+      )
+      .classList
+      .toggle(
+        "hidden",
+        !show
+      );
 
-  fetch(
-    "https://script.google.com/macros/s/AKfycbxsnRE1_gZNCLhzTImSm5lnxse9ivMPQ0qIgWaAoxf0k4N135QXh844-I4wLKU7qgEH/exec",
-    {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8"
-      },
-      body: JSON.stringify(orderData)
+
+    const zipInput =
+      document.getElementById(
+        "zip"
+      );
+
+
+    if (
+      show &&
+      zipInput
+    ) {
+
+      zipInput.oninput =
+        function() {
+
+          const zip =
+            zipInput.value.trim();
+
+
+          const info =
+            getDeliveryInfo(
+              zip
+            );
+
+
+          const feeDisplay =
+            document.getElementById(
+              "deliveryFeeDisplay"
+            );
+
+
+          if (
+            zip.length === 5 &&
+            info.fee > 0
+          ) {
+
+            feeDisplay.innerText =
+              "Delivery Fee: $" +
+
+              info.fee.toFixed(2) +
+
+              " (" +
+
+              info.zone +
+
+              ")";
+
+          }
+
+
+          else if (
+            zip.length === 5
+          ) {
+
+            feeDisplay.innerText =
+              "Delivery area not available. Please choose pickup.";
+
+          }
+
+
+          else {
+
+            feeDisplay.innerText =
+              "Delivery Fee: $0";
+
+          }
+
+
+          updateCart();
+
+        };
+
     }
-  );
 
-  document.getElementById("confirmation").innerText =
-    "Thank you! Your order has been submitted.";
+  }
 
-  cart = [];
 
-  updateCart();
-}
+  /* =========================
+     SUBMIT ORDER
+     ========================= */
+
+  function submitOrder() {
+
+    if (
+      cart.length === 0
+    ) {
+
+      alert(
+        "Please add something to your order first."
+      );
+
+
+      return;
+
+    }
+
+
+    const name =
+      document.getElementById(
+        "customerName"
+      ).value;
+
+
+    const phone =
+      document.getElementById(
+        "phone"
+      ).value;
+
+
+    const orderDate =
+      document.getElementById(
+        "orderDate"
+      ).value;
+
+
+    const delivery =
+      document.querySelector(
+        'input[name="delivery"]:checked'
+      ).value;
+
+
+    const address =
+      document.getElementById(
+        "address"
+      ).value;
+
+
+    const zip =
+      document.getElementById(
+        "zip"
+      ).value.trim();
+
+
+    const paymentMethod =
+      document.getElementById(
+        "paymentMethod"
+      ).value;
+
+
+    const notes =
+      document.getElementById(
+        "notes"
+      ).value;
+
+
+    if (
+      !name ||
+      !phone
+    ) {
+
+      alert(
+        "Please enter your name and phone number."
+      );
+
+
+      return;
+
+    }
+
+
+    let deliveryFee =
+      0;
+
+
+    let deliveryZone =
+      "";
+
+
+    if (
+      delivery === "delivery"
+    ) {
+
+      if (
+        !address
+      ) {
+
+        alert(
+          "Please enter your delivery address."
+        );
+
+
+        return;
+
+      }
+
+
+      if (
+        !/^\d{5}$/.test(zip)
+      ) {
+
+        alert(
+          "Please enter a valid 5-digit delivery ZIP code."
+        );
+
+
+        return;
+
+      }
+
+
+      const zone1 = [
+
+        "14215",
+
+        "14214",
+
+        "14208",
+
+        "14211",
+
+        "14216"
+
+      ];
+
+
+      const zone2 = [
+
+        "14209",
+
+        "14212",
+
+        "14213",
+
+        "14210",
+
+        "14222"
+
+      ];
+
+
+      const zone3 = [
+
+        "14201",
+
+        "14202",
+
+        "14203",
+
+        "14204",
+
+        "14206",
+
+        "14220",
+
+        "14223"
+
+      ];
+
+
+      const zone4 = [
+
+        "14207",
+
+        "14217",
+
+        "14218",
+
+        "14219",
+
+        "14221",
+
+        "14224",
+
+        "14225",
+
+        "14226",
+
+        "14227",
+
+        "14228"
+
+      ];
+
+
+      if (
+        zone1.includes(zip)
+      ) {
+
+        deliveryZone =
+          "Zone 1";
+
+        deliveryFee =
+          3;
+
+      }
+
+
+      else if (
+        zone2.includes(zip)
+      ) {
+
+        deliveryZone =
+          "Zone 2";
+
+        deliveryFee =
+          5;
+
+      }
+
+
+      else if (
+        zone3.includes(zip)
+      ) {
+
+        deliveryZone =
+          "Zone 3";
+
+        deliveryFee =
+          8;
+
+      }
+
+
+      else if (
+        zone4.includes(zip)
+      ) {
+
+        deliveryZone =
+          "Zone 4";
+
+        deliveryFee =
+          10;
+
+      }
+
+
+      else {
+
+        alert(
+          "Sorry, that ZIP code is outside our current delivery area. Please choose pickup."
+        );
+
+
+        return;
+
+      }
+
+    }
+
+
+    const subtotal =
+      cart.reduce(
+        function(total, item) {
+
+          return total +
+            item.price;
+
+        },
+        0
+      );
+
+
+    const total =
+      subtotal +
+      deliveryFee;
+
+
+    const items =
+      cart
+        .map(
+          function(item) {
+
+            return (
+
+              item.name +
+
+              " - $" +
+
+              item.price.toFixed(2)
+
+            );
+
+          }
+        )
+        .join("\n");
+
+
+    const orderData = {
+
+      customerName:
+        name,
+
+      phone:
+        phone,
+
+      orderDate:
+        orderDate,
+
+      items:
+        items,
+
+      subtotal:
+        subtotal.toFixed(2),
+
+      fulfillment:
+        delivery,
+
+      address:
+        address,
+
+      distance:
+        deliveryZone,
+
+      deliveryFee:
+        deliveryFee.toFixed(2),
+
+      total:
+        total.toFixed(2),
+
+      paymentMethod:
+        paymentMethod,
+
+      paymentStatus:
+        "Pending",
+
+      zip:
+        zip,
+
+      notes:
+        notes
+
+    };
+
+
+    fetch(
+
+      "https://script.google.com/macros/s/AKfycbxsnRE1_gZNCLhzTImSm5lnxse9ivMPQ0qIgWaAoxf0k4N135QXh844-I4wLKU7qgEH/exec",
+
+      {
+
+        method:
+          "POST",
+
+        mode:
+          "no-cors",
+
+        headers: {
+
+          "Content-Type":
+            "text/plain;charset=utf-8"
+
+        },
+
+        body:
+          JSON.stringify(
+            orderData
+          )
+
+      }
+
+    );
+
+
+    document.getElementById(
+      "confirmation"
+    ).innerText =
+      "Thank you! Your order has been submitted.";
+
+
+    cart =
+      [];
+
+
+    updateCart();
+
+  }
+
+
+  /* =========================
+     STARTUP
+     ========================= */
+
+  applyDropDay();
+
+  applySpoonfulTrouble();
 
 </script>
 
