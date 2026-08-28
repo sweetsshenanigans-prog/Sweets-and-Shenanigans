@@ -1,0 +1,2305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sweets & Shenanigans — Catering</title>
+
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff7f2;
+      color: #333;
+    }
+
+    header {
+      background: #6b3fa0;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .section {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #6b3fa0;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+    }
+
+    .intro {
+      line-height: 1.6;
+    }
+
+    .item {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 15px;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 6px;
+    }
+
+    .radio-label,
+    .check-label {
+      font-weight: normal;
+      display: block;
+      margin: 8px 0;
+    }
+
+    button {
+      background: #6b3fa0;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .add-button {
+      margin-top: 8px;
+    }
+
+    .remove-button {
+      background: #9b2c2c;
+      padding: 7px 10px;
+      font-size: 13px;
+    }
+
+    .price-box {
+      background: #f7f0fb;
+      padding: 12px;
+      border-radius: 8px;
+      margin: 10px 0;
+      line-height: 1.5;
+    }
+
+    .notice {
+      background: #fff4d6;
+      padding: 12px;
+      border-radius: 8px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .small-text {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .cart-item {
+      border-bottom: 1px solid #eee;
+      padding: 12px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+
+    .cart-details {
+      flex: 1;
+    }
+
+    .cart-price {
+      white-space: nowrap;
+      font-weight: bold;
+    }
+
+    .total {
+      text-align: right;
+      font-size: 19px;
+      font-weight: bold;
+      margin-top: 15px;
+      line-height: 1.7;
+    }
+
+    .submit {
+      width: 100%;
+      background: #238b45;
+      font-size: 17px;
+      margin-top: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .error {
+      color: #a40000;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .success {
+      color: #176b32;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <h1>Sweets & Shenanigans</h1>
+
+  <p>Catering</p>
+
+</header>
+
+
+<div class="container">
+
+
+  <!-- INTRO -->
+
+  <div class="section">
+
+    <h2>🎉 Sweets Catering</h2>
+
+    <p class="intro">
+
+      Planning a birthday, shower, wedding, graduation,
+      holiday gathering, or special event?
+
+      Tell us what you need and we'll help make your
+      dessert table unforgettable.
+
+    </p>
+
+    <p class="small-text">
+
+      Catering orders are reviewed before they are
+      finalized. Your submission is a catering request,
+      not an automatic payment.
+
+    </p>
+
+  </div>
+
+
+  <!-- EVENT INFORMATION -->
+
+  <div class="section">
+
+    <h2>📅 Event Information</h2>
+
+
+    <label for="eventDate">
+      Event Date
+    </label>
+
+    <input
+      type="date"
+      id="eventDate"
+      required
+    >
+
+
+    <label for="eventType">
+      Event Type
+    </label>
+
+    <select id="eventType">
+
+      <option value="">
+        Choose event type
+      </option>
+
+      <option value="Birthday">
+        Birthday
+      </option>
+
+      <option value="Baby Shower">
+        Baby Shower
+      </option>
+
+      <option value="Bridal Shower">
+        Bridal Shower
+      </option>
+
+      <option value="Wedding">
+        Wedding
+      </option>
+
+      <option value="Graduation">
+        Graduation
+      </option>
+
+      <option value="Corporate">
+        Corporate
+      </option>
+
+      <option value="Holiday">
+        Holiday
+      </option>
+
+      <option value="Family Gathering">
+        Family Gathering
+      </option>
+
+      <option value="Other">
+        Other
+      </option>
+
+    </select>
+
+
+    <label for="guestCount">
+      Estimated Guest Count
+    </label>
+
+    <input
+      type="number"
+      id="guestCount"
+      min="1"
+      placeholder="Number of guests"
+    >
+
+  </div>
+
+
+  <!-- PUDDING CATERING -->
+
+  <div class="section">
+
+    <h2>🍮 Pudding Catering</h2>
+
+    <div class="notice">
+
+      <strong>Catering minimums:</strong><br>
+
+      3 oz — 12 cups per flavor<br>
+      5 oz — 12 cups per flavor<br>
+      8 oz — 6 cups per flavor<br>
+      Half pan — $45<br>
+      Full pan — $90<br><br>
+
+      12 oz cups are not available for catering.
+
+    </div>
+
+
+    <!-- REGULAR BANANA -->
+
+    <div class="item">
+
+      <h3>Regular Banana Pudding</h3>
+
+      <label for="bananaStyle">
+        Banana option
+      </label>
+
+      <select id="bananaStyle">
+
+        <option value="With Bananas">
+          With Bananas
+        </option>
+
+        <option value="Without Bananas">
+          Without Bananas
+        </option>
+
+      </select>
+
+
+      <label for="bananaPackage">
+        Catering package
+      </label>
+
+      <select id="bananaPackage">
+
+        <option value="">
+          Choose package
+        </option>
+
+        <option value="3 oz - 12 cups - $30">
+          3 oz — 12 cups — $30
+        </option>
+
+        <option value="5 oz - 12 cups - $42">
+          5 oz — 12 cups — $42
+        </option>
+
+        <option value="8 oz - 6 cups - $36">
+          8 oz — 6 cups — $36
+        </option>
+
+        <option value="Half Pan - $45">
+          Half Pan — $45
+        </option>
+
+        <option value="Full Pan - $90">
+          Full Pan — $90
+        </option>
+
+      </select>
+
+
+      <button
+        type="button"
+        class="add-button"
+        onclick="addPudding('Regular Banana Pudding')"
+      >
+        Add to Catering Order
+      </button>
+
+    </div>
+
+
+    <!-- STRAWBERRY -->
+
+    <div class="item">
+
+      <h3>Strawberry Crunch Dream</h3>
+
+      <label for="strawberryPackage">
+        Catering package
+      </label>
+
+      <select id="strawberryPackage">
+
+        <option value="">
+          Choose package
+        </option>
+
+        <option value="3 oz - 12 cups - $30">
+          3 oz — 12 cups — $30
+        </option>
+
+        <option value="5 oz - 12 cups - $42">
+          5 oz — 12 cups — $42
+        </option>
+
+        <option value="8 oz - 6 cups - $36">
+          8 oz — 6 cups — $36
+        </option>
+
+        <option value="Half Pan - $45">
+          Half Pan — $45
+        </option>
+
+        <option value="Full Pan - $90">
+          Full Pan — $90
+        </option>
+
+      </select>
+
+
+      <button
+        type="button"
+        onclick="addPudding('Strawberry Crunch Dream')"
+      >
+        Add to Catering Order
+      </button>
+
+    </div>
+
+
+    <!-- SUNSHINE -->
+
+    <div class="item">
+
+      <h3>Sunshine Crunch</h3>
+
+      <label for="sunshinePackage">
+        Catering package
+      </label>
+
+      <select id="sunshinePackage">
+
+        <option value="">
+          Choose package
+        </option>
+
+        <option value="3 oz - 12 cups - $30">
+          3 oz — 12 cups — $30
+        </option>
+
+        <option value="5 oz - 12 cups - $42">
+          5 oz — 12 cups — $42
+        </option>
+
+        <option value="8 oz - 6 cups - $36">
+          8 oz — 6 cups — $36
+        </option>
+
+        <option value="Half Pan - $45">
+          Half Pan — $45
+        </option>
+
+        <option value="Full Pan - $90">
+          Full Pan — $90
+        </option>
+
+      </select>
+
+
+      <button
+        type="button"
+        onclick="addPudding('Sunshine Crunch')"
+      >
+        Add to Catering Order
+      </button>
+
+    </div>
+
+
+    <!-- OREO -->
+
+    <div class="item">
+
+      <h3>Oreos and Cream Pudding</h3>
+
+      <label for="oreoPackage">
+        Catering package
+      </label>
+
+      <select id="oreoPackage">
+
+        <option value="">
+          Choose package
+        </option>
+
+        <option value="3 oz - 12 cups - $30">
+          3 oz — 12 cups — $30
+        </option>
+
+        <option value="5 oz - 12 cups - $42">
+          5 oz — 12 cups — $42
+        </option>
+
+        <option value="8 oz - 6 cups - $36">
+          8 oz — 6 cups — $36
+        </option>
+
+        <option value="Half Pan - $45">
+          Half Pan — $45
+        </option>
+
+        <option value="Full Pan - $90">
+          Full Pan — $90
+        </option>
+
+      </select>
+
+
+      <button
+        type="button"
+        onclick="addPudding('Oreos and Cream Pudding')"
+      >
+        Add to Catering Order
+      </button>
+
+    </div>
+
+
+    <!-- BANANA STRAWBERRY -->
+
+    <div class="item">
+
+      <h3>Banana Strawberry Crunch Dream</h3>
+
+      <label for="bananaStrawberryPackage">
+        Catering package
+      </label>
+
+      <select id="bananaStrawberryPackage">
+
+        <option value="">
+          Choose package
+        </option>
+
+        <option value="3 oz - 12 cups - $30">
+          3 oz — 12 cups — $30
+        </option>
+
+        <option value="5 oz - 12 cups - $42">
+          5 oz — 12 cups — $42
+        </option>
+
+        <option value="8 oz - 6 cups - $36">
+          8 oz — 6 cups — $36
+        </option>
+
+        <option value="Half Pan - $45">
+          Half Pan — $45
+        </option>
+
+        <option value="Full Pan - $90">
+          Full Pan — $90
+        </option>
+
+      </select>
+
+
+      <button
+        type="button"
+        onclick="addPudding('Banana Strawberry Crunch Dream')"
+      >
+        Add to Catering Order
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- CAKE PUDDINGS -->
+
+  <div class="section">
+
+    <h2>🥄 A Spoonful of Trouble</h2>
+
+    <p class="small-text">
+
+      Cake puddings are available for catering.
+      Catering pricing will be confirmed with your quote.
+
+    </p>
+
+
+    <div class="item">
+
+      <h3>B.P. Delight</h3>
+
+      <select id="bpDelightPackage">
+
+        <option value="">
+          Choose package
+        </option>
+
+        <option value="5 oz">
+          5 oz
+        </option>
+
+        <option value="8 oz">
+          8 oz
+        </option>
+
+      </select>
+
+
+      <button
+        type="button"
+        onclick="addCakePudding('B.P. Delight')"
+      >
+        Add to Catering Request
+      </button>
+
+    </div>
+
+
+    <div class="item">
+
+      <h3>Biscoff Bliss</h3>
+
+      <select id="biscoffPackage">
+
+        <option value="">
+          Choose package
+        </option>
+
+        <option value="5 oz">
+          5 oz
+        </option>
+
+        <option value="8 oz">
+          8 oz
+        </option>
+
+      </select>
+
+
+      <button
+        type="button"
+        onclick="addCakePudding('Biscoff Bliss')"
+      >
+        Add to Catering Request
+      </button>
+
+    </div>
+
+
+    <div class="item">
+
+      <h3>Peach Cobbler Passion</h3>
+
+      <select id="peachPackage">
+
+        <option value="">
+          Choose package
+        </option>
+
+        <option value="5 oz">
+          5 oz
+        </option>
+
+        <option value="8 oz">
+          8 oz
+        </option>
+
+      </select>
+
+
+      <button
+        type="button"
+        onclick="addCakePudding('Peach Cobbler Passion')"
+      >
+        Add to Catering Request
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- CHEESECAKES -->
+
+  <div class="section">
+
+    <h2>🍰 Cheesecake Catering</h2>
+
+    <div class="notice">
+
+      Whole cheesecake — <strong>$45</strong><br>
+      Approximately 7–8 slices<br><br>
+
+      6 slices — <strong>$39</strong><br>
+      12 slices — <strong>$72</strong><br><br>
+
+      Minimum 6 slices per flavor.
+
+    </div>
+
+
+    <div class="item">
+
+      <h3>Apple Pie</h3>
+
+      <select id="applePiePackage">
+
+        <option value="">
+          Choose package
+        </option>
+
+        <option value="Whole Cheesecake - $45">
+          Whole Cheesecake — $45
+        </option>
+
+        <option value="6 Slices - $39">
+          6 Slices — $39
+        </option>
+
+        <option value="12 Slices - $72">
+          12 Slices — $72
+        </option>
+
+      </select>
+
+
+      <button
+        type="button"
+        onclick="addCheesecake('Apple Pie')"
+      >
+        Add to Catering Order
+      </button>
+
+    </div>
+
+
+    <div class="item">
+
+      <h3>Jaylen's Peanut Butter Bliss</h3>
+
+      <select id="peanutButterPackage">
+
+        <option value="">
+          Choose package
+        </option>
+
+        <option value="Whole Cheesecake - $45">
+          Whole Cheesecake — $45
+        </option>
+
+        <option value="6 Slices - $39">
+          6 Slices — $39
+        </option>
+
+        <option value="12 Slices - $72">
+          12 Slices — $72
+        </option>
+
+      </select>
+
+
+      <button
+        type="button"
+        onclick="addCheesecake('Jaylen\'s Peanut Butter Bliss')"
+      >
+        Add to Catering Order
+      </button>
+
+    </div>
+
+
+    <div class="item">
+
+      <h3>Midnight Cookie Crunch</h3>
+
+      <select id="midnightPackage">
+
+        <option value="">
+          Choose package
+        </option>
+
+        <option value="Whole Cheesecake - $45">
+          Whole Cheesecake — $45
+        </option>
+
+        <option value="6 Slices - $39">
+          6 Slices — $39
+        </option>
+
+        <option value="12 Slices - $72">
+          12 Slices — $72
+        </option>
+
+      </select>
+
+
+      <button
+        type="button"
+        onclick="addCheesecake('Midnight Cookie Crunch')"
+      >
+        Add to Catering Order
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- CART -->
+
+  <div class="section">
+
+    <h2>🛒 Catering Request</h2>
+
+    <div id="cart">
+
+      <p class="small-text">
+        No catering selections yet.
+      </p>
+
+    </div>
+
+
+    <div class="total">
+
+      <div>
+        Priced Items:
+        $<span id="subtotal">0.00</span>
+      </div>
+
+      <div>
+        Delivery:
+        $<span id="deliveryFee">0.00</span>
+      </div>
+
+      <div>
+        Estimated Total:
+        $<span id="total">0.00</span>
+      </div>
+
+    </div>
+
+
+    <p
+      id="quoteNotice"
+      class="small-text"
+    ></p>
+
+  </div>
+
+
+  <!-- CUSTOMER -->
+
+  <div class="section">
+
+    <h2>📋 Your Information</h2>
+
+
+    <label for="customerName">
+      Full Name
+    </label>
+
+    <input
+      type="text"
+      id="customerName"
+      placeholder="Full Name"
+      required
+    >
+
+
+    <label for="phone">
+      Phone Number
+    </label>
+
+    <input
+      type="tel"
+      id="phone"
+      placeholder="Phone Number"
+      required
+    >
+
+
+    <label for="email">
+      Email Address
+    </label>
+
+    <input
+      type="email"
+      id="email"
+      placeholder="Email Address"
+    >
+
+  </div>
+
+
+  <!-- PICKUP DELIVERY -->
+
+  <div class="section">
+
+    <h2>📍 Pickup or Delivery?</h2>
+
+
+    <label class="radio-label">
+
+      <input
+        type="radio"
+        name="fulfillment"
+        value="Pickup"
+        checked
+        onchange="updateDelivery()"
+      >
+
+      Pickup
+
+    </label>
+
+
+    <label class="radio-label">
+
+      <input
+        type="radio"
+        name="fulfillment"
+        value="Delivery"
+        onchange="updateDelivery()"
+      >
+
+      Delivery
+
+    </label>
+
+
+    <div
+      id="deliveryFields"
+      class="hidden"
+    >
+
+      <label for="address">
+        Delivery Address
+      </label>
+
+      <input
+        type="text"
+        id="address"
+        placeholder="Delivery Address"
+      >
+
+
+      <label for="zip">
+        Delivery ZIP Code
+      </label>
+
+      <input
+        type="text"
+        id="zip"
+        maxlength="5"
+        inputmode="numeric"
+        placeholder="5-digit ZIP Code"
+        oninput="updateDelivery()"
+      >
+
+
+      <p
+        id="deliveryMessage"
+        class="small-text"
+      ></p>
+
+    </div>
+
+  </div>
+
+
+  <!-- PAYMENT -->
+
+  <div class="section">
+
+    <h2>💳 Payment Method</h2>
+
+    <select id="paymentMethod">
+
+      <option value="Apple Pay">
+        Apple Pay
+      </option>
+
+      <option value="Zelle">
+        Zelle
+      </option>
+
+      <option value="Cash App">
+        Cash App
+      </option>
+
+      <option value="Cash">
+        Cash
+      </option>
+
+    </select>
+
+    <p class="small-text">
+
+      Catering payment and deposit requirements will
+      be confirmed after your request is reviewed.
+
+    </p>
+
+  </div>
+
+
+  <!-- NOTES -->
+
+  <div class="section">
+
+    <h2>📝 Special Requests</h2>
+
+    <textarea
+      id="notes"
+      rows="5"
+      placeholder="Tell us about any special requests, theme, colors, dietary concerns, or other details."
+    ></textarea>
+
+  </div>
+
+
+  <!-- SUBMIT -->
+
+  <div class="section">
+
+    <button
+      type="button"
+      class="submit"
+      onclick="submitCateringRequest()"
+    >
+      Submit Catering Request
+    </button>
+
+
+    <p
+      id="confirmation"
+      class="success"
+    ></p>
+
+  </div>
+
+</div>
+
+
+<script>
+
+
+  /* =========================
+     CART
+     ========================= */
+
+  let cart = [];
+
+
+  /* =========================
+     DELIVERY
+     ========================= */
+
+  function getDeliveryInfo(zip) {
+
+    const zone1 = [
+      "14215",
+      "14214",
+      "14208",
+      "14211",
+      "14216"
+    ];
+
+
+    const zone2 = [
+      "14209",
+      "14212",
+      "14213",
+      "14210",
+      "14222"
+    ];
+
+
+    const zone3 = [
+      "14201",
+      "14202",
+      "14203",
+      "14204",
+      "14206",
+      "14220",
+      "14223"
+    ];
+
+
+    const zone4 = [
+      "14207",
+      "14217",
+      "14218",
+      "14219",
+      "14221",
+      "14224",
+      "14225",
+      "14226",
+      "14227",
+      "14228"
+    ];
+
+
+    if (zone1.includes(zip)) {
+
+      return {
+        zone: "Zone 1",
+        fee: 3
+      };
+
+    }
+
+
+    if (zone2.includes(zip)) {
+
+      return {
+        zone: "Zone 2",
+        fee: 5
+      };
+
+    }
+
+
+    if (zone3.includes(zip)) {
+
+      return {
+        zone: "Zone 3",
+        fee: 8
+      };
+
+    }
+
+
+    if (zone4.includes(zip)) {
+
+      return {
+        zone: "Zone 4",
+        fee: 10
+      };
+
+    }
+
+
+    return {
+      zone: "",
+      fee: 0
+    };
+
+  }
+
+
+  function updateDelivery() {
+
+    const fulfillment =
+      document.querySelector(
+        'input[name="fulfillment"]:checked'
+      )?.value;
+
+
+    const fields =
+      document.getElementById(
+        "deliveryFields"
+      );
+
+
+    if (fulfillment === "Delivery") {
+
+      fields.classList.remove("hidden");
+
+    } else {
+
+      fields.classList.add("hidden");
+
+    }
+
+
+    updateTotals();
+
+  }
+
+
+  /* =========================
+     PACKAGE PRICES
+     ========================= */
+
+  function getPackagePrice(packageText) {
+
+    if (
+      packageText.includes("3 oz")
+    ) {
+
+      return 30;
+
+    }
+
+
+    if (
+      packageText.includes("5 oz")
+    ) {
+
+      return 42;
+
+    }
+
+
+    if (
+      packageText.includes("8 oz")
+    ) {
+
+      return 36;
+
+    }
+
+
+    if (
+      packageText.includes("Half Pan")
+    ) {
+
+      return 45;
+
+    }
+
+
+    if (
+      packageText.includes("Full Pan")
+    ) {
+
+      return 90;
+
+    }
+
+
+    if (
+      packageText.includes("Whole Cheesecake")
+    ) {
+
+      return 45;
+
+    }
+
+
+    if (
+      packageText.includes("6 Slices")
+    ) {
+
+      return 39;
+
+    }
+
+
+    if (
+      packageText.includes("12 Slices")
+    ) {
+
+      return 72;
+
+    }
+
+
+    return null;
+
+  }
+
+
+  /* =========================
+     ADD PUDDING
+     ========================= */
+
+  function addPudding(flavor) {
+
+    let selectId;
+
+
+    if (
+      flavor === "Regular Banana Pudding"
+    ) {
+
+      selectId =
+        "bananaPackage";
+
+    }
+
+
+    if (
+      flavor === "Strawberry Crunch Dream"
+    ) {
+
+      selectId =
+        "strawberryPackage";
+
+    }
+
+
+    if (
+      flavor === "Sunshine Crunch"
+    ) {
+
+      selectId =
+        "sunshinePackage";
+
+    }
+
+
+    if (
+      flavor === "Oreos and Cream Pudding"
+    ) {
+
+      selectId =
+        "oreoPackage";
+
+    }
+
+
+    if (
+      flavor === "Banana Strawberry Crunch Dream"
+    ) {
+
+      selectId =
+        "bananaStrawberryPackage";
+
+    }
+
+
+    const select =
+      document.getElementById(
+        selectId
+      );
+
+
+    const packageText =
+      select.value;
+
+
+    if (!packageText) {
+
+      alert(
+        "Please choose a catering package first."
+      );
+
+
+      return;
+
+    }
+
+
+    const price =
+      getPackagePrice(
+        packageText
+      );
+
+
+    let displayName =
+      flavor;
+
+
+    if (
+      flavor === "Regular Banana Pudding"
+    ) {
+
+      const bananaStyle =
+        document.getElementById(
+          "bananaStyle"
+        ).value;
+
+
+      displayName +=
+        " - " +
+        bananaStyle;
+
+    }
+
+
+    cart.push({
+
+      name:
+        displayName,
+
+      package:
+        packageText,
+
+      price:
+        price,
+
+      quoteRequired:
+        false
+
+    });
+
+
+    updateCart();
+
+  }
+
+
+  /* =========================
+     ADD CAKE PUDDING
+     ========================= */
+
+  function addCakePudding(flavor) {
+
+    let selectId;
+
+
+    if (
+      flavor === "B.P. Delight"
+    ) {
+
+      selectId =
+        "bpDelightPackage";
+
+    }
+
+
+    if (
+      flavor === "Biscoff Bliss"
+    ) {
+
+      selectId =
+        "biscoffPackage";
+
+    }
+
+
+    if (
+      flavor === "Peach Cobbler Passion"
+    ) {
+
+      selectId =
+        "peachPackage";
+
+    }
+
+
+    const select =
+      document.getElementById(
+        selectId
+      );
+
+
+    const packageText =
+      select.value;
+
+
+    if (!packageText) {
+
+      alert(
+        "Please choose a size first."
+      );
+
+
+      return;
+
+    }
+
+
+    cart.push({
+
+      name:
+        flavor,
+
+      package:
+        packageText,
+
+      price:
+        null,
+
+      quoteRequired:
+        true
+
+    });
+
+
+    updateCart();
+
+  }
+
+
+  /* =========================
+     ADD CHEESECAKE
+     ========================= */
+
+  function addCheesecake(flavor) {
+
+    let selectId;
+
+
+    if (
+      flavor === "Apple Pie"
+    ) {
+
+      selectId =
+        "applePiePackage";
+
+    }
+
+
+    if (
+      flavor ===
+      "Jaylen's Peanut Butter Bliss"
+    ) {
+
+      selectId =
+        "peanutButterPackage";
+
+    }
+
+
+    if (
+      flavor ===
+      "Midnight Cookie Crunch"
+    ) {
+
+      selectId =
+        "midnightPackage";
+
+    }
+
+
+    const select =
+      document.getElementById(
+        selectId
+      );
+
+
+    const packageText =
+      select.value;
+
+
+    if (!packageText) {
+
+      alert(
+        "Please choose a cheesecake package first."
+      );
+
+
+      return;
+
+    }
+
+
+    const price =
+      getPackagePrice(
+        packageText
+      );
+
+
+    cart.push({
+
+      name:
+        flavor,
+
+      package:
+        packageText,
+
+      price:
+        price,
+
+      quoteRequired:
+        false
+
+    });
+
+
+    updateCart();
+
+  }
+
+
+  /* =========================
+     REMOVE ITEM
+     ========================= */
+
+  function removeItem(index) {
+
+    cart.splice(
+      index,
+      1
+    );
+
+
+    updateCart();
+
+  }
+
+
+  /* =========================
+     UPDATE CART
+     ========================= */
+
+  function updateCart() {
+
+    const cartBox =
+      document.getElementById(
+        "cart"
+      );
+
+
+    const quoteNotice =
+      document.getElementById(
+        "quoteNotice"
+      );
+
+
+    if (
+      cart.length === 0
+    ) {
+
+      cartBox.innerHTML =
+        '<p class="small-text">No catering selections yet.</p>';
+
+
+      quoteNotice.innerText =
+        "";
+
+
+      updateTotals();
+
+
+      return;
+
+    }
+
+
+    cartBox.innerHTML =
+      "";
+
+
+    let quoteRequired =
+      false;
+
+
+    cart.forEach(
+      function(item, index) {
+
+        if (
+          item.quoteRequired
+        ) {
+
+          quoteRequired =
+            true;
+
+        }
+
+
+        const row =
+          document.createElement(
+            "div"
+          );
+
+
+        row.className =
+          "cart-item";
+
+
+        let priceText;
+
+
+        if (
+          item.price === null
+        ) {
+
+          priceText =
+            "Quote";
+
+        } else {
+
+          priceText =
+            "$" +
+            item.price.toFixed(2);
+
+        }
+
+
+        row.innerHTML =
+
+          '<div class="cart-details">' +
+
+          "<strong>" +
+          item.name +
+          "</strong><br>" +
+
+          '<span class="small-text">' +
+          item.package +
+          "</span>" +
+
+          "</div>" +
+
+          '<div class="cart-price">' +
+
+          priceText +
+
+          '<br><button type="button" class="remove-button" onclick="removeItem(' +
+
+          index +
+
+          ')">Remove</button>' +
+
+          "</div>";
+
+
+        cartBox.appendChild(
+          row
+        );
+
+      }
+    );
+
+
+    if (
+      quoteRequired
+    ) {
+
+      quoteNotice.innerText =
+        "Your request includes Cake Pudding pricing that will be confirmed with your catering quote.";
+
+    } else {
+
+      quoteNotice.innerText =
+        "";
+
+    }
+
+
+    updateTotals();
+
+  }
+
+
+  /* =========================
+     TOTALS
+     ========================= */
+
+  function updateTotals() {
+
+    let subtotal =
+      0;
+
+
+    cart.forEach(
+      function(item) {
+
+        if (
+          item.price !== null
+        ) {
+
+          subtotal +=
+            item.price;
+
+        }
+
+      }
+    );
+
+
+    const fulfillment =
+      document.querySelector(
+        'input[name="fulfillment"]:checked'
+      )?.value;
+
+
+    let deliveryFee =
+      0;
+
+
+    if (
+      fulfillment === "Delivery"
+    ) {
+
+      const zip =
+        document.getElementById(
+          "zip"
+        )?.value.trim();
+
+
+      const info =
+        getDeliveryInfo(
+          zip
+        );
+
+
+      deliveryFee =
+        info.fee;
+
+    }
+
+
+    const total =
+      subtotal +
+      deliveryFee;
+
+
+    document.getElementById(
+      "subtotal"
+    ).innerText =
+      subtotal.toFixed(2);
+
+
+    document.getElementById(
+      "deliveryFee"
+    ).innerText =
+      deliveryFee.toFixed(2);
+
+
+    document.getElementById(
+      "total"
+    ).innerText =
+      total.toFixed(2);
+
+
+    const deliveryMessage =
+      document.getElementById(
+        "deliveryMessage"
+      );
+
+
+    if (
+      fulfillment === "Delivery"
+    ) {
+
+      const zip =
+        document.getElementById(
+          "zip"
+        )?.value.trim();
+
+
+      if (
+        zip.length === 5
+      ) {
+
+        const info =
+          getDeliveryInfo(
+            zip
+          );
+
+
+        if (
+          info.fee > 0
+        ) {
+
+          deliveryMessage.innerText =
+            info.zone +
+            " delivery fee: $" +
+            info.fee.toFixed(2);
+
+        } else {
+
+          deliveryMessage.innerText =
+            "That ZIP code is outside the current delivery area.";
+
+        }
+
+      } else {
+
+        deliveryMessage.innerText =
+          "Enter your 5-digit ZIP code to calculate delivery.";
+
+      }
+
+    } else {
+
+      deliveryMessage.innerText =
+        "";
+
+    }
+
+  }
+
+
+  /* =========================
+     SUBMIT
+     ========================= */
+
+  function submitCateringRequest() {
+
+    if (
+      cart.length === 0
+    ) {
+
+      alert(
+        "Please add at least one catering selection."
+      );
+
+
+      return;
+
+    }
+
+
+    const customerName =
+      document.getElementById(
+        "customerName"
+      ).value.trim();
+
+
+    const phone =
+      document.getElementById(
+        "phone"
+      ).value.trim();
+
+
+    const email =
+      document.getElementById(
+        "email"
+      ).value.trim();
+
+
+    const eventDate =
+      document.getElementById(
+        "eventDate"
+      ).value;
+
+
+    const eventType =
+      document.getElementById(
+        "eventType"
+      ).value;
+
+
+    const guestCount =
+      document.getElementById(
+        "guestCount"
+      ).value;
+
+
+    const fulfillment =
+      document.querySelector(
+        'input[name="fulfillment"]:checked'
+      ).value;
+
+
+    const address =
+      document.getElementById(
+        "address"
+      ).value.trim();
+
+
+    const zip =
+      document.getElementById(
+        "zip"
+      ).value.trim();
+
+
+    const paymentMethod =
+      document.getElementById(
+        "paymentMethod"
+      ).value;
+
+
+    const notes =
+      document.getElementById(
+        "notes"
+      ).value.trim();
+
+
+    if (
+      !customerName ||
+      !phone
+    ) {
+
+      alert(
+        "Please enter your name and phone number."
+      );
+
+
+      return;
+
+    }
+
+
+    if (
+      !eventDate
+    ) {
+
+      alert(
+        "Please enter the event date."
+      );
+
+
+      return;
+
+    }
+
+
+    if (
+      fulfillment === "Delivery"
+    ) {
+
+      if (
+        !address
+      ) {
+
+        alert(
+          "Please enter your delivery address."
+        );
+
+
+        return;
+
+      }
+
+
+      if (
+        !/^\d{5}$/.test(zip)
+      ) {
+
+        alert(
+          "Please enter a valid 5-digit delivery ZIP code."
+        );
+
+
+        return;
+
+      }
+
+
+      const deliveryInfo =
+        getDeliveryInfo(
+          zip
+        );
+
+
+      if (
+        deliveryInfo.fee === 0
+      ) {
+
+        alert(
+          "Sorry, that ZIP code is outside the current delivery area. Please choose pickup."
+        );
+
+
+        return;
+
+      }
+
+    }
+
+
+    let subtotal =
+      0;
+
+
+    let quoteRequired =
+      false;
+
+
+    const products =
+      cart.map(
+        function(item) {
+
+          if (
+            item.price === null
+          ) {
+
+            quoteRequired =
+              true;
+
+          } else {
+
+            subtotal +=
+              item.price;
+
+          }
+
+
+          return (
+            item.name +
+            " — " +
+            item.package +
+            " — " +
+            (
+              item.price === null
+                ? "Quote"
+                : "$" +
+                  item.price.toFixed(2)
+            )
+          );
+
+        }
+      ).join("\n");
+
+
+    let deliveryFee =
+      0;
+
+
+    let deliveryZone =
+      "";
+
+
+    if (
+      fulfillment === "Delivery"
+    ) {
+
+      const info =
+        getDeliveryInfo(
+          zip
+        );
+
+
+      deliveryFee =
+        info.fee;
+
+
+      deliveryZone =
+        info.zone;
+
+    }
+
+
+    const total =
+      subtotal +
+      deliveryFee;
+
+
+    const orderData = {
+
+      orderType:
+        "Catering",
+
+      destinationSheet:
+        "Sweets Catering Orders",
+
+      customerName:
+        customerName,
+
+      phone:
+        phone,
+
+      email:
+        email,
+
+      orderDate:
+        new Date().toISOString(),
+
+      eventDate:
+        eventDate,
+
+      eventType:
+        eventType,
+
+      guestCount:
+        guestCount,
+
+      items:
+        products,
+
+      subtotal:
+        subtotal.toFixed(2),
+
+      fulfillment:
+        fulfillment,
+
+      address:
+        address,
+
+      distance:
+        deliveryZone,
+
+      deliveryFee:
+        deliveryFee.toFixed(2),
+
+      total:
+        total.toFixed(2),
+
+      deposit:
+        "",
+
+      balanceDue:
+        "",
+
+      paymentMethod:
+        paymentMethod,
+
+      paymentStatus:
+        "Pending",
+
+      orderStatus:
+        "New",
+
+      zip:
+        zip,
+
+      notes:
+        notes,
+
+      quoteRequired:
+        quoteRequired
+
+    };
+
+
+    /*
+      IMPORTANT:
+
+      This is the same Apps Script endpoint currently
+      used by the Sweets order form.
+
+      The backend must be updated to recognize:
+
+      orderType = Catering
+
+      destinationSheet = Sweets Catering Orders
+
+      BEFORE catering submissions can be routed
+      correctly to the new catering sheet.
+    */
+
+    fetch(
+
+      "https://script.google.com/macros/s/AKfycbxsnRE1_gZNCLhzTImSm5lnxse9ivMPQ0qIgWaAoxf0k4N135QXh844-I4wLKU7qgEH/exec",
+
+      {
+
+        method:
+          "POST",
+
+        mode:
+          "no-cors",
+
+        headers: {
+
+          "Content-Type":
+            "text/plain;charset=utf-8"
+
+        },
+
+        body:
+          JSON.stringify(
+            orderData
+          )
+
+      }
+
+    );
+
+
+    document.getElementById(
+      "confirmation"
+    ).innerText =
+
+      "Thank you! Your catering request has been submitted. We will review your request and follow up with your catering details and final pricing.";
+
+
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth"
+    });
+
+  }
+
+
+  /* =========================
+     STARTUP
+     ========================= */
+
+  updateDelivery();
+
+  updateCart();
+
+</script>
+
+</body>
+</html>
