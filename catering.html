@@ -902,19 +902,23 @@
 
         <select id="bpDelightPackage">
 
-          <option value="">
-            Choose size
-          </option>
+  <option value="">
+    Choose package
+  </option>
 
-          <option value="5 oz">
-            5 oz
-          </option>
+  <option value="3 oz - 12 cups - $42">
+    3 oz — 12 cups — $42
+  </option>
 
-          <option value="8 oz">
-            8 oz
-          </option>
+  <option value="5 oz - 12 cups - $54">
+    5 oz — 12 cups — $54
+  </option>
 
-        </select>
+  <option value="8 oz - 6 cups - $42">
+    8 oz — 6 cups — $42
+  </option>
+
+</select>
 
 
         <button
@@ -939,19 +943,23 @@
 
         <select id="biscoffPackage">
 
-          <option value="">
-            Choose size
-          </option>
+  <option value="">
+    Choose package
+  </option>
 
-          <option value="5 oz">
-            5 oz
-          </option>
+  <option value="3 oz - 12 cups - $42">
+    3 oz — 12 cups — $42
+  </option>
 
-          <option value="8 oz">
-            8 oz
-          </option>
+  <option value="5 oz - 12 cups - $54">
+    5 oz — 12 cups — $54
+  </option>
 
-        </select>
+  <option value="8 oz - 6 cups - $42">
+    8 oz — 6 cups — $42
+  </option>
+
+</select>
 
 
         <button
@@ -976,19 +984,23 @@
 
         <select id="peachPackage">
 
-          <option value="">
-            Choose size
-          </option>
+  <option value="">
+    Choose package
+  </option>
 
-          <option value="5 oz">
-            5 oz
-          </option>
+  <option value="3 oz - 12 cups - $42">
+    3 oz — 12 cups — $42
+  </option>
 
-          <option value="8 oz">
-            8 oz
-          </option>
+  <option value="5 oz - 12 cups - $54">
+    5 oz — 12 cups — $54
+  </option>
 
-        </select>
+  <option value="8 oz - 6 cups - $42">
+    8 oz — 6 cups — $42
+  </option>
+
+</select>
 
 
         <button
@@ -1820,6 +1832,16 @@
       }
 
 
+            let price = null;
+
+      if (packageText.includes("3 oz")) {
+        price = 42;
+      } else if (packageText.includes("5 oz")) {
+        price = 54;
+      } else if (packageText.includes("8 oz")) {
+        price = 42;
+      }
+
       cart.push({
 
         name:
@@ -1829,13 +1851,13 @@
           packageText,
 
         price:
-          null,
+          price,
 
         quoteRequired:
-          true
+          false
 
       });
-
+ 
 
       updateCart();
 
@@ -2495,7 +2517,7 @@
           email,
 
         orderDate:
-          new Date().toISOString(),
+  new Date().toLocaleDateString("en-US"),
 
         eventDate:
           eventDate,
