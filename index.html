@@ -347,54 +347,66 @@ textarea {
        CHEESECAKES
        ========================= -->
 
-  <div class="section">
+ <div class="section">
 
-    <h2>🍰 Cheesecake Slices — $7</h2>
+  <h2>🍰 Cheesecake Slices — $7</h2>
 
+  <!-- APPLE PIE — ON HOLD -->
+  <div class="item" style="display:none;">
+    <h3>Apple Pie</h3>
 
-    <div class="item">
-      <h3>Apple Pie</h3>
-
-      <button
-        type="button"
-        onclick="addCheesecake('Apple Pie')"
-      >
-        Add Slice
-      </button>
-    </div>
-
-
-    <div class="item">
-      <h3>Jaylen's Peanut Butter Bliss</h3>
-
-      <button
-        type="button"
-        onclick="addCheesecake('Jaylen\'s Peanut Butter Bliss')"
-      >
-        Add Slice
-      </button>
-    </div>
-
-
-    <div class="item">
-      <h3>Midnight Cookie Crunch</h3>
-
-      <button
-        type="button"
-        onclick="addCheesecake('Midnight Cookie Crunch')"
-      >
-        Add Slice
-      </button>
-    </div>
-
+    <button
+      type="button"
+      onclick="addCheesecake('Apple Pie')"
+    >
+      Add Slice
+    </button>
   </div>
+
+  <!-- JAYLEN'S PEANUT BUTTER BLISS -->
+  <div class="item">
+    <h3>Jaylen's Peanut Butter Bliss</h3>
+
+    <button
+      type="button"
+      onclick="addCheesecake('Jaylen\'s Peanut Butter Bliss')"
+    >
+      Add Slice
+    </button>
+  </div>
+
+  <!-- MIDNIGHT COOKIE CRUNCH -->
+  <div class="item">
+    <h3>Midnight Cookie Crunch</h3>
+
+    <button
+      type="button"
+      onclick="addCheesecake('Midnight Cookie Crunch')"
+    >
+      Add Slice
+    </button>
+  </div>
+
+  <!-- STRAWBERRY CRUNCH TEMPTATION -->
+  <div class="item">
+    <h3>Strawberry Crunch Temptation</h3>
+
+    <button
+      type="button"
+      onclick="addCheesecake('Strawberry Crunch Temptation')"
+    >
+      Add Slice
+    </button>
+  </div>
+
+</div>
 
 
   <!-- =========================
        SHENANIGAN FLIGHT
        ========================= -->
 
-  <div class="section">
+  <div class="section" style="display:none;">
 
     <h2>✨ Shenanigan Flight — $12</h2>
 
@@ -662,7 +674,7 @@ textarea {
      SPOONFUL MASTER SWITCH
      ========================= */
 
-  const SPOONFUL_TROUBLE = false;
+ const SPOONFUL_TROUBLE = true;
 
 
   /* =========================
@@ -688,16 +700,11 @@ textarea {
   */
 
   const DROP_DAY_ITEMS = [
+  "B.P. Delight",
+  "Biscoff Bliss",
+  "Peach Cobbler Passion"
+];
 
-    "Regular Banana Pudding",
-
-    "Strawberry Crunch Dream",
-
-    "Oreos and Cream Pudding",
-
-    "Banana Strawberry Crunch Dream"
-
-  ];
 
 
   /* =========================
