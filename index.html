@@ -7,7 +7,6 @@
 
   <style>
     body {
-      body {
   font-family: Arial, sans-serif;
   margin: 0;
   background-color: #fff8f3;
@@ -343,10 +342,38 @@ textarea {
   </div>
 
 
+  </div>
+
+
   <!-- =========================
-       CHEESECAKES
+       SHENANIGANS FOOD
        ========================= -->
 
+  <div class="section" id="shenanigansSection">
+
+    <h2>🍽️ Shenanigans</h2>
+
+    <p class="small-text">
+      Savory food made for when you're ready to get into a little shenanigans.
+    </p>
+
+    <!-- FOOD ITEMS WILL BE ADDED HERE
+         AFTER RECIPE TESTING AND MENU PRICES ARE FINALIZED. -->
+
+    <div id="shenanigansMenu">
+
+      <p class="small-text">
+        Shenanigans menu coming soon.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       CHEESECAKES
+       ========================= --> 
  <div class="section">
 
   <h2>🍰 Cheesecake Slices — $7</h2>
@@ -675,7 +702,173 @@ textarea {
      ========================= */
 
  const SPOONFUL_TROUBLE = true;
+/* =========================
+   SHENANIGANS FOOD MENU
+   ========================= */
 
+const SHENANIGANS_ITEMS = [];
+
+
+function renderShenanigansMenu() {
+
+  const menu =
+    document.getElementById(
+      "shenanigansMenu"
+    );
+
+  if (!menu) return;
+
+
+  if (SHENANIGANS_ITEMS.length === 0) {
+
+    menu.innerHTML =
+      '<p class="small-text">' +
+      'Shenanigans menu coming soon.' +
+      '</p>';
+
+    return;
+
+  }
+
+
+  menu.innerHTML = "";
+
+
+  SHENANIGANS_ITEMS.forEach(
+    function(item) {
+
+      const itemBox =
+        document.createElement("div");
+
+      itemBox.className =
+        "item";
+
+
+      let sizeOptions = "";
+
+      item.options.forEach(
+        function(option, index) {
+
+          sizeOptions +=
+            '<option value="' +
+            index +
+            '">' +
+            option.name +
+            ' - $' +
+            option.price.toFixed(2) +
+            '</option>';
+
+        }
+      );
+
+
+      itemBox.innerHTML =
+        "<h3>" +
+        item.name +
+        "</h3>" +
+
+        "<p>" +
+        item.description +
+        "</p>" +
+
+        '<select id="shenanigansSize-' +
+        item.id +
+        '">' +
+
+        sizeOptions +
+
+        "</select>" +
+
+        '<input type="number" ' +
+        'min="1" value="1" ' +
+        'id="shenanigansQty-' +
+        item.id +
+        '">' +
+
+        '<button type="button" ' +
+        'onclick="addShenanigan(\'' +
+        item.id +
+        '\')">' +
+        'Add to Order' +
+        '</button>';
+
+
+      menu.appendChild(itemBox);
+
+    }
+  );
+
+}
+
+
+/* =========================
+   ADD SHENANIGAN TO CART
+   ========================= */
+
+function addShenanigan(id) {
+
+  const item =
+    SHENANIGANS_ITEMS.find(
+      function(food) {
+        return food.id === id;
+      }
+    );
+
+  if (!item) return;
+
+
+  const sizeSelect =
+    document.getElementById(
+      "shenanigansSize-" + id
+    );
+
+
+  const quantityInput =
+    document.getElementById(
+      "shenanigansQty-" + id
+    );
+
+
+  const selectedOption =
+    item.options[
+      Number(sizeSelect?.value || 0)
+    ];
+
+
+  if (!selectedOption) return;
+
+
+  const quantity =
+    Math.max(
+      1,
+      Number(quantityInput?.value || 1)
+    );
+
+
+  for (
+    let i = 0;
+    i < quantity;
+    i++
+  ) {
+
+    cart.push({
+
+      name:
+        "Shenanigans - " +
+        item.name +
+        " - " +
+        selectedOption.name,
+
+      price:
+        selectedOption.price
+});
+
+  }
+
+
+  updateCart();
+
+}
 
   /* =========================
      CURRENT DROP DAY MENU
@@ -2060,7 +2253,8 @@ textarea {
   applyDropDay();
 
   applySpoonfulTrouble();
-
+  
+renderShenanigansMenu();
 </script>
 
 </body>
