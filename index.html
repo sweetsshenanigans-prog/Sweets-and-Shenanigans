@@ -423,13 +423,92 @@ textarea {
 
 </div>
 
+<!-- COOKIE MENU -->
+<div class="section" id="cookieMenuSection">
+  <h2>🍪 Cookies</h2>
+  <div id="cookieMenu">
 
+  <h3>Regular Cookies — $5 each</h3>
+  <div class="item">
+    <select id="regularCookie">
+      <option>PB Bandit</option>
+      <option>Loaded Oatlaw</option>
+      <option>Midnight Overload</option>
+      <option>Chocolate Business</option>
+    </select>
+    <button type="button" onclick="addCookie(document.getElementById('regularCookie').value + ' - Full Size', 5)">Add to Order — $5</button>
+  </div>
+
+  <h3>Cheesecake-Stuffed Cookies — $7 each</h3>
+  <div class="item">
+    <select id="stuffedCookie">
+      <option>Pebbles Gone Wild</option>
+      <option>Oatlaw Secret</option>
+      <option>Pebble Chaos</option>
+      <option>Double Cross</option>
+    </select>
+    <button type="button" onclick="addCookie(document.getElementById('stuffedCookie').value + ' - Full Size Stuffed', 7)">Add to Order — $7</button>
+  </div>
+
+  <div class="item">
+    <h3>Macadamia Heist — $10</h3>
+    <button type="button" onclick="addCookie('Macadamia Heist - Full Size Stuffed', 10)">Add to Order — $10</button>
+  </div>
+
+  <h3>Small Cookies — 2.5 oz</h3>
+  <div class="item">
+    <select id="smallRegular">
+      <option>PB Bandit</option>
+      <option>Loaded Oatlaw</option>
+      <option>Midnight Overload</option>
+      <option>Chocolate Business</option>
+    </select>
+    <button type="button" onclick="addCookie(document.getElementById('smallRegular').value + ' - Small Regular', 2.50)">Add to Order — $2.50</button>
+  </div>
+
+  <div class="item">
+    <select id="smallStuffed">
+      <option>Pebbles Gone Wild</option>
+      <option>Oatlaw Secret</option>
+      <option>Pebble Chaos</option>
+      <option>Double Cross</option>
+    </select>
+    <button type="button" onclick="addCookie(document.getElementById('smallStuffed').value + ' - Small Stuffed', 6)">Add to Order — $6</button>
+  </div>
+
+  <h3>Cookie Boxes — Choose Your Flavors</h3>
+  <div class="item">
+    <h3>Sweet Suspects — 4 Small Regular Cookies — $10</h3>
+    <select id="sweet1"><option>PB Bandit</option><option>Loaded Oatlaw</option><option>Midnight Overload</option><option>Chocolate Business</option></select>
+    <select id="sweet2"><option>PB Bandit</option><option>Loaded Oatlaw</option><option>Midnight Overload</option><option>Chocolate Business</option></select>
+    <select id="sweet3"><option>PB Bandit</option><option>Loaded Oatlaw</option><option>Midnight Overload</option><option>Chocolate Business</option></select>
+    <select id="sweet4"><option>PB Bandit</option><option>Loaded Oatlaw</option><option>Midnight Overload</option><option>Chocolate Business</option></select>
+    <button type="button" onclick="addCookie('Sweet Suspects Box: ' + [1,2,3,4].map(n => document.getElementById('sweet'+n).value).join(', '), 10)">Add Box — $10</button>
+  </div>
+
+  <div class="item">
+    <h3>Guilty Box — 4 Small Cheesecake-Stuffed Cookies — $22</h3>
+    <select id="guilty1"><option>Pebbles Gone Wild</option><option>Oatlaw Secret</option><option>Pebble Chaos</option><option>Double Cross</option></select>
+    <select id="guilty2"><option>Pebbles Gone Wild</option><option>Oatlaw Secret</option><option>Pebble Chaos</option><option>Double Cross</option></select>
+    <select id="guilty3"><option>Pebbles Gone Wild</option><option>Oatlaw Secret</option><option>Pebble Chaos</option><option>Double Cross</option></select>
+    <select id="guilty4"><option>Pebbles Gone Wild</option><option>Oatlaw Secret</option><option>Pebble Chaos</option><option>Double Cross</option></select>
+    <button type="button" onclick="addCookie('Guilty Box: ' + [1,2,3,4].map(n => document.getElementById('guilty'+n).value).join(', '), 22)">Add Box — $22</button>
+  </div>
+
+</div>
+
+<script>
+function addCookie(name, price) {
+  cart.push({ name: name, price: price });
+  updateCart();
+}
+</script>
+</div>
   <!-- =========================
        SHENANIGAN FLIGHT
        ========================= -->
 
-  <div class="section" style="display:none;">
-
+<div class="section" style="display:none;">
     <h2>✨ Shenanigan Flight — $12</h2>
 
     <p>
